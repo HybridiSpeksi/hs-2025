@@ -14,11 +14,6 @@
 	};
 </script>
 
-<svelte:head>
-	<title>Aikaisemmat HybridiSpeksit</title>
-	<meta name="description" content="Aikaisemmat HybridiSpeksin produktiot" />
-</svelte:head>
-
 <section class="wrap2">
 	<h1>Aikaisemmat HybridiSpeksit</h1>
 	<ul class="grid">

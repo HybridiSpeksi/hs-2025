@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Person } from '$lib/types/common';
-	import { getProductionYear } from '$lib/utils/timeUtils';
+	import { getProductionYear } from '$lib/utils/utils';
 	import PersonElement from './PersonElement.svelte';
 
 	export let peopleGroup: Person[];
