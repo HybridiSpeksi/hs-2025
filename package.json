@@ -1,6 +1,6 @@
 {
-	"name": "hs-2024",
-	"version": "0.1.0",
+	"name": "hs-2025",
+	"version": "1.0.0",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
@@ -32,18 +32,20 @@
 		"prettier": "^3.2.4",
 		"prettier-plugin-svelte": "^3.1.2",
 		"sass": "^1.70.0",
-		"svelte": "^4.2.9",
+		"svelte": "^4.2.19",
 		"svelte-check": "^3.6.3",
 		"tslib": "^2.6.2",
 		"typescript": "^5.3.3",
-		"vite": "^5.0.12",
-		"vitest": "^1.2.0"
+		"vite": "^5.3.6",
+		"vitest": "^1.2.0",
+		"rollup": "^4.22.4"
 	},
 	"type": "module",
 	"dependencies": {
 		"bigger-picture": "^1.1.17",
 		"chart.js": "^4.4.2",
-		"svelte-chartjs": "^3.1.5"
+		"svelte-chartjs": "^3.1.5",
+		"micromatch": ">=4.0.8"
 	},
 	"engines": {
 		"node": ">=20"
