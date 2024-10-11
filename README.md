@@ -5,15 +5,13 @@ Here you can find instructions on setting up the development environment, buildi
 
 ## Roadmap
 
-- Improve songbook and fetch songs directly from backend
+- Improve songbook and fetch songs directly from WordPress
 
-- Add test, both unit and e2e
+- Plan and implement content improvements
+
+- Add tests for the project
 
 - Add GitHub Actions workflow which runs tests and handles deployment
-
-- Make the application PWA for easier mobile and offline access
-
-- Migrate CMS to self-hosted Directus
 
 - ???
 
@@ -42,12 +40,17 @@ Voit lisätä komennon loppuun lipun `--host` jolloin kehitysserverille pääsee
 
 ## Environment Variables
 
-To run this ap, you will **NEED** to add the following environment variables to your .env.local file
+To run this ap, you will **NEED** to add the following lines to a .env file in the root of the project.
+You can find the values for these variables in the team's Google Drive.
 
 ```env
-WP_REST_API_URL=<URL>
+WP_REST_API_URL=<...>
+WP_MEDIA_API_URL=<...>
+DIRECTUS_API_URL=<...>
 
-WP_GRAPHQL_URL=<URL>
+PUBLIC_WP_REST_API_URL=<...>
+PUBLIC_WP_MEDIA_API_URL=<...>
+PUBLIC_DIRECTUS_API_URL=<...>
 ```
 
 ## Develop Locally

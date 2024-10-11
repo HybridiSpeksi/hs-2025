@@ -2,10 +2,11 @@
 	"useTabs": true,
 	"tabWidth": 4,
 	"singleQuote": true,
-	"trailingComma": "none",
+	"trailingComma": "all",
 	"printWidth": 100,
 	"semi": true,
 	"bracketSameLine": true,
+	"endOfLine": "lf",
 	"plugins": ["prettier-plugin-svelte"],
 	"overrides": [
 		{
@@ -13,7 +14,8 @@
 			"options": {
 				"parser": "svelte",
 				"svelteAllowShorthand": true,
-				"svelteIndentScriptAndStyle": true
+				"svelteIndentScriptAndStyle": true,
+				"tabWidth": 4
 			}
 		}
 	]

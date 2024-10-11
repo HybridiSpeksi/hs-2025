@@ -12,18 +12,12 @@ export type ContactItem = {
 } | null;
 
 export type NavigationItem = {
-    id: number;
+	id: number;
 	title: string;
 	link: string;
 };
 
-type NavigationData = {
-	id: number;
-	date_created: string;
-	date_updated: string | null;
+export type NavigationObject = {
+	navigation_name: string;
 	items: NavigationItem[];
-};
-
-export type ApiNavigations = {
-	data: NavigationData;
 };

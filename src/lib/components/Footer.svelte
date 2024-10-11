@@ -1,11 +1,23 @@
 <script lang="ts">
-	import type { ContactItem, NavigationItem } from '$lib/types/content'
-	import ContactsList from '$lib/components/ContactsList.svelte'
-	import '$styles/app.scss'
-	import { page } from '$app/stores'
-	import logo from '$lib/images/logo_white.avif'
-	let contacts: ContactItem = $page.data.address
-	let navigations: NavigationItem[] = $page.data.nodes
+	import type { ContactItem, NavigationObject, NavigationItem } from '$lib/types/content';
+	import ContactsList from '$lib/components/ContactsList.svelte';
+	import '$styles/app.scss';
+	import { page } from '$app/stores';
+	import logo from '$lib/images/logo_white.avif';
+	let contacts: ContactItem = $page.data.address;
+	let navigations: NavigationObject[] = $page.data.navigations;
+
+	let bottomNavigation = navigations.find((nav) => nav.navigation_name === 'bottom-navigation');
+	let botNavItems: NavigationItem[] = [];
+	if (bottomNavigation && bottomNavigation.items) {
+		botNavItems = bottomNavigation.items;
+	}
+
+	let importantLinks = navigations.find((nav) => nav.navigation_name === 'important-links');
+	let impLinkItems: NavigationItem[] = [];
+	if (importantLinks && importantLinks.items) {
+		impLinkItems = importantLinks.items;
+	}
 </script>
 
 <section>
@@ -14,7 +26,7 @@
 			<div class="pages">
 				<h2>Sivut</h2>
 				<ul>
-					{#each navigations as item (item.id)}
+					{#each botNavItems as item (item.id)}
 						<li><a href={item.link}>{item.title}</a></li>
 					{/each}
 				</ul>
@@ -26,8 +38,9 @@
 			<div class="socials">
 				<h2>Tärkeät linkit</h2>
 				<ul>
-					<li><a href="/kalenteri">Kalenteri</a></li>
-					<li><a href="/laulukirja">Laulukirja</a></li>
+					{#each impLinkItems as item (item.id)}
+						<li><a href={item.link}>{item.title}</a></li>
+					{/each}
 				</ul>
 			</div>
 		</div>

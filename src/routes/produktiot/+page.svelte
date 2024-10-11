@@ -19,7 +19,7 @@
 	<meta name="description" content="Aikaisemmat HybridiSpeksin produktiot" />
 </svelte:head>
 
-<section class="wrap">
+<section class="wrap2">
 	<h1>Aikaisemmat HybridiSpeksit</h1>
 	<ul class="grid">
 		{#each productions as speksi (speksi.id)}
@@ -46,7 +46,7 @@
 </section>
 
 <style lang="scss">
-	.wrap {
+	.wrap2 {
 		text-align: center;
 		margin: 0 10vw;
 		@media only screen and (max-width: 768px) {

@@ -1,23 +1,29 @@
 <script lang="ts">
-	import { page } from '$app/stores'
-	import type { NavigationItem } from '$lib/types/content'
+	import { page } from '$app/stores';
+	import type { NavigationItem, NavigationObject } from '$lib/types/content';
 	// import { Moon } from 'svelte-loading-spinners'
-	import { toggleSidebar } from './stores'
+	import { toggleSidebar } from './stores';
 
-	let menuItems: NavigationItem[] = $page.data.nodes
+	let navigations: NavigationObject[] = $page.data.navigations;
+
+	let topNavigation = navigations.find((nav) => nav.navigation_name === 'top-navigation');
+	let topNavItems: NavigationItem[] = [];
+	if (topNavigation && topNavigation.items) {
+		topNavItems = topNavigation.items;
+	}
 
 	// Toggle sidebar of when link is clicked on mobile
 	function linkToggleSidebar() {
 		if (window.innerWidth <= 768) {
-			toggleSidebar()
+			toggleSidebar();
 		}
 	}
 </script>
 
 <nav class="nav-menu">
-	{#if menuItems?.length > 0}
+	{#if topNavItems?.length > 0}
 		<ul class="link-flex">
-			{#each menuItems as item (item.id)}
+			{#each topNavItems as item (item.id)}
 				<li class="link-item">
 					<a on:click={linkToggleSidebar} href={item.link}>{item.title}</a>
 				</li>
@@ -48,6 +54,7 @@
 		gap: 0.5rem;
 	}
 
+	/* Vertical toggle navigation on mobile */
 	@media (max-width: 768px) {
 		.nav-menu {
 			display: flex;
@@ -58,7 +65,7 @@
 		}
 		.link-flex {
 			flex-direction: column;
-			gap: 1rem;
+			gap: 0.8rem;
 		}
 	}
 
@@ -82,9 +89,9 @@
 			gap: 1.2rem;
 		}
 		.link-item {
-		margin-bottom: 0rem;
-		padding-right: 0rem;
-	}
+			margin-bottom: 0rem;
+			padding-right: 0rem;
+		}
 	}
 
 	.nav-menu a {

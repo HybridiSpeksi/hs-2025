@@ -1,23 +1,18 @@
 <script lang="ts">
-	import type { SinglePageContent } from '$lib/types/content'
-	export let data: SinglePageContent
+	import BlockContent from '$lib/components/BlockContent.svelte';
+	import type { SinglePageContent } from '$lib/types/content';
+	export let data: SinglePageContent;
 </script>
 
 <div class="page-bg">
 	{#if data?.bannerUrl}
 		<div class="top-banner">
 			<img src={data.bannerUrl} alt={data.title} />
-			<h1 class="title">{data?.title}</h1>
 		</div>
 	{/if}
 
 	<div class="page wrap {data?.bannerUrl ? '' : 'padded'}">
-		{#if !data?.bannerUrl}
-			<h1 class="title">{data?.title}</h1>
-		{/if}
-		{#if data?.contentHTML}
-			<div class="content">{@html data.contentHTML}</div>
-		{/if}
+		<BlockContent blockTitle={data?.title} blockHTML={data?.contentHTML} />
 	</div>
 </div>
 
@@ -28,14 +23,15 @@
 	.page {
 		min-height: 85vh;
 	}
-	.title {
-		text-align: center;
-		font-size: 3rem;
-		margin: 0;
+/*
+	.wrap {
 		@media (max-width: 768px) {
-			font-size: 3rem;
+			height: 30vh;
 		}
 	}
+	*/
+
+
 	.top-banner {
 		align-items: center;
 		justify-content: center;
@@ -78,26 +74,7 @@
 		}
 	}
 
-	.content {
-		max-width: 800px;
-		margin: 0 auto;
-
-		@media (max-width: 800px) {
-			& img {
-				max-height: 300px;
-				max-width: 100%;
-				object-fit: scale-down;
-			}
-		}
-	}
-
 	.padded {
 		padding-top: 20px;
-	}
-
-	@media (max-width: 800px) {
-		.title {
-			font-size: 2rem;
-		}
 	}
 </style>

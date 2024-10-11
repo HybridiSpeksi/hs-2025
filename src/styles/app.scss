@@ -1,42 +1,42 @@
 @font-face {
-    font-display: swap;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    src: url('$lib/fonts/Poppins-Regular.woff2') format('woff2');
+	font-display: swap;
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 400;
+	src: url('$lib/fonts/Poppins-Regular.woff2') format('woff2');
 }
 
 @font-face {
-    font-display: swap;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    src: url('$lib/fonts/Poppins-Bold.woff2') format('woff2');
+	font-display: swap;
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 700;
+	src: url('$lib/fonts/Poppins-Bold.woff2') format('woff2');
 }
 
 @font-face {
-    font-display: swap;
-    font-family: 'Comic Neue';
-    font-style: normal;
-    font-weight: 400;
-    src: url('$lib/fonts/ComicNeue-Regular.woff2') format('woff2');
+	font-display: swap;
+	font-family: 'Comic Neue';
+	font-style: normal;
+	font-weight: 400;
+	src: url('$lib/fonts/ComicNeue-Regular.woff2') format('woff2');
 }
 
 @font-face {
-    font-display: swap;
-    font-family: 'Comic Neue';
-    font-style: normal;
-    font-weight: 700;
-    src: url('$lib/fonts/ComicNeue-Bold.woff2') format('woff2');
+	font-display: swap;
+	font-family: 'Comic Neue';
+	font-style: normal;
+	font-weight: 700;
+	src: url('$lib/fonts/ComicNeue-Bold.woff2') format('woff2');
 }
 
 .center {
-    border: 0;
-    margin: auto;
-    width: 50%;
-    height: 50%;
-    padding: 0;
-    text-align: center;
+	border: 0;
+	margin: auto;
+	width: 50%;
+	height: 50%;
+	padding: 0;
+	text-align: center;
 }
 
 h1,
@@ -45,154 +45,167 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-display: swap;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+	font-display: swap;
 
-    & .center {
-        text-align: center;
-        margin: auto 0;
-    }
+	& .center {
+		text-align: center;
+		margin: auto 0;
+	}
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--black-hex);
-    color: var(--white-hex);
-    margin-left: auto;
-    margin-right: auto;
+	font-family: 'Poppins', sans-serif;
+	background-color: var(--black-hex);
+	color: var(--white-hex);
+	margin-left: auto;
+	margin-right: auto;
 
-    &.overflow-y-hidden {
-        overflow-y: hidden;
-    }
+	&.overflow-y-hidden {
+		overflow-y: hidden;
+	}
 
-    &::before {
-        content: "";
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background-image: url('$lib/images/logo_black.avif');
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center center;
-        opacity: 0.4;
-        z-index: -10;
-    }
+	&::before {
+		content: '';
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background-image: url('$lib/images/logo_black.avif');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center center;
+		opacity: 0.4;
+		z-index: -10;
+	}
 }
 
 .wrap {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 20px;
 
-    @media (max-width: 768px) {
-        margin: 0 20px;
-    }
+	@media (max-width: 768px) {
+		width: 90%;
+		margin: 0 auto;
+		padding: 0;
+	}
+}
+
+.wrap-1100 {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 0 20px;
+
+	@media (max-width: 768px) {
+		margin: 0 auto;
+		padding: 0;
+	}
 }
 
 h1 {
-    font-size: 50px;
+	font-size: 50px;
 
-    @media (max-width: 500px) {
-        font-size: 32px;
-    }
+	@media (max-width: 500px) {
+		font-size: 32px;
+	}
 }
 
 h2 {
-    font-size: 32px;
+	font-size: 32px;
 
-    @media (max-width: 500px) {
-        font-size: 24px;
-    }
+	@media (max-width: 500px) {
+		font-size: 24px;
+	}
 }
 
 h3 {
-    font-size: 24px;
+	font-size: 24px;
 
-    @media (max-width: 500px) {
-        font-size: 20px;
-    }
+	@media (max-width: 500px) {
+		font-size: 20px;
+	}
 }
 
 h4 {
-    font-size: 20px;
+	font-size: 20px;
 
-    @media (max-width: 500px) {
-        font-size: 18px;
-    }
+	@media (max-width: 500px) {
+		font-size: 18px;
+	}
 }
 
 h5 {
-    font-size: 18px;
+	font-size: 18px;
 
-    @media (max-width: 500px) {
-        font-size: 16px;
-    }
+	@media (max-width: 500px) {
+		font-size: 16px;
+	}
 }
 
 p {
-    font-size: 16px;
+	font-size: 16px;
 
-    &.small {
-        font-size: 12px;
-    }
+	&.small {
+		font-size: 12px;
+	}
 
-    &.medium {
-        font-size: 16px;
+	&.medium {
+		font-size: 16px;
 
-        @media (max-width: 500px) {
-            font-size: 12px;
-        }
-    }
+		@media (max-width: 500px) {
+			font-size: 12px;
+		}
+	}
 
-    &.large {
-        font-size: 22px;
+	&.large {
+		font-size: 22px;
 
-        @media (max-width: 500px) {
-            font-size: 18px;
-        }
-    }
+		@media (max-width: 500px) {
+			font-size: 18px;
+		}
+	}
 
-    &.x-large {
-        font-size: 28px;
+	&.x-large {
+		font-size: 28px;
 
-        @media (max-width: 500px) {
-            font-size: 24px;
-        }
-    }
+		@media (max-width: 500px) {
+			font-size: 24px;
+		}
+	}
 }
 
 button,
 a.btn {
-    background: var(--white-hex);
-    border: var(--white-hex) solid 3px;
-    color: var(--black-hex);
-    font-size: 20px;
-    font-weight: 700;
-    padding: 15px;
-    border-radius: 5px;
-    text-decoration: none;
+	background: var(--white-hex);
+	border: var(--white-hex) solid 3px;
+	color: var(--black-hex);
+	font-size: 20px;
+	font-weight: 700;
+	padding: 15px;
+	border-radius: 5px;
+	text-decoration: none;
 
-    &.secundary {
-        background: none;
-        color: var(--white-hex);
-    }
+	&.secundary {
+		background: none;
+		color: var(--white-hex);
+	}
 
-    &.tertiary {
-        color: var(--white-hex);
-    }
+	&.tertiary {
+		color: var(--white-hex);
+	}
 }
 
 .flex {
-    display: flex;
+	display: flex;
 
-    & .flex-item {
-        &.three {
-            width: 25%;
-        }
+	& .flex-item {
+		&.three {
+			width: 25%;
+		}
 
-        &.twelve {
-            width: 100%;
-        }
-    }
+		&.twelve {
+			width: 100%;
+		}
+	}
 }

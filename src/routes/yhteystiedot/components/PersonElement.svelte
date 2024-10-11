@@ -7,6 +7,10 @@
 <div class="person">
 	<div class="info">
 		<p class="name">{person.name}</p>
+		<!-- Reverse the user email to possibly avoid spam? -->
+		<span class="email" style="unicode-bidi:bidi-override; direction: rtl;">
+			{person.email?.split('').reverse().join('')}
+		</span>
 		<p class="job">{person.jobs}</p>
 	</div>
 </div>
@@ -24,7 +28,20 @@
 			& .name {
 				font-size: 1.5rem;
 				font-weight: 700;
-				margin-bottom: 0.4rem;
+				display: block;
+				margin-bottom: 0.2rem;
+				@media (max-width: 768px) {
+					margin-bottom: 0.2rem;
+				}
+			}
+
+			& .email {
+				font-size: 1.1rem;
+				margin-bottom: 0.2rem;
+				display: inline-block;
+				@media (max-width: 768px) {
+					margin-bottom: 3px;
+				}
 			}
 
 			& .job {
@@ -40,12 +57,6 @@
 				line-height: 24px;
 				margin: 0;
 			}
-		}
-	}
-
-	@media (max-width: 768px) {
-		.job {
-			min-height: 3rem;
 		}
 	}
 </style>
