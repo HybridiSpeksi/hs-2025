@@ -1,169 +1,158 @@
 <script lang="ts">
-	import Filters from './components/SongFilters.svelte';
-	import { afterUpdate, onMount } from 'svelte';
-	import songData from '$lib/data/songs.json';
-	import type { SongType } from '$lib/types/song';
-	import type { SongFilter } from '$lib/types/songbook';
-	let songs: SongType[] = songData;
+	import { debounce } from '$lib/utils/utils';
+	import type { Song } from '$lib/types/songs';
+	import MdiArrowUp from '~icons/mdi/arrow-up';
 
-	let filters: SongFilter;
-	let songs_filtered: SongType[] = [];
-	let years: number[] = [];
+	export let data: { songs: Song[] };
 
-	let isAutoScrollEnabled = false;
-	let scrollInterval: ReturnType<typeof setInterval>;
+	// Map years to production names
+	const productions: Record<number, string> = {
+		2014: 'Meidän speksi',
+		2015: 'H.A.L.I.',
+		2016: 'BratvaKontra',
+		2017: 'Kruunun kohtalo',
+		2018: 'Älä ammu ohi',
+		2019: 'Viimeinen lohikäärmeisku',
+		2020: '2101: Avaruusristeily',
+		2022: 'Inferno: Kunnes Kadotus meidät korjaa',
+		2023: 'Kreivin aikaan',
+		2024: 'Kevätpäivänseisaus',
+	};
 
-	onMount(() => {
-		filters = {
-			year: 2014
-		};
+	// State
+	let selectedYear = 2014;
+	let searchQuery = '';
+	let searchInput: HTMLInputElement;
+	let scrollY = 0;
 
-		// find all distinct years in songs
-		songs.forEach((n) => {
-			if (n.year != 2014 && !years.includes(n.year)) {
-				years.push(n.year);
+	$: years = [...new Set(data.songs.map((song) => song.year))].sort((a, b) => a - b);
+
+	$: showScrollTop = scrollY > 300;
+
+	// Search from all songs
+	$: searchResults = searchQuery
+		? data.songs
+				.filter(
+					(song) =>
+						song.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+						song.lyrics.toLowerCase().includes(searchQuery.toLowerCase()) ||
+						song.originalArtist.toLowerCase().includes(searchQuery.toLowerCase()) ||
+						song.originalSong.toLowerCase().includes(searchQuery.toLowerCase()),
+				)
+				.slice(0, 10)
+		: [];
+
+	// Filter songs based on selected year
+	$: displayedSongs = data.songs.filter((song) => song.year === selectedYear);
+
+	// Debounce to prevent too many search events
+	const handleSearch = debounce((event: Event) => {
+		const target = event.target as HTMLInputElement;
+		searchQuery = target.value;
+	}, 300);
+
+	function scrollToSong(song: Song) {
+		selectedYear = song.year;
+		searchQuery = '';
+		if (searchInput) {
+			searchInput.value = '';
+		}
+		setTimeout(() => {
+			const element = document.getElementById(song.title);
+			if (element) {
+				element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				element.classList.add('highlight');
+				setTimeout(() => element.classList.remove('highlight'), 2000);
 			}
-		});
-		years.sort((a, b) => a - b);
-	});
-
-	afterUpdate(() => {
-		songs_filtered = songs.filter((n) => {
-			return n.year == filters?.year;
-		});
-	});
-
-	let y: number;
-	let hidden = true;
-
-	async function scrollTo(song: SongType | string) {
-		if (song == 'top') {
-			y = 0;
-			handleOnScroll();
-			document.body.scrollIntoView();
-		} else if (typeof song === 'object') {
-			let destination = song.title;
-			await setYear(song.year);
-			let el = document.getElementById(destination);
-			if (el) {
-				el.scrollIntoView();
-			}
-		}
+		}, 100);
 	}
 
-	function setYear(year: number) {
-		if (year != 2000 && filters.year != year) {
-			filters.year = year;
-		}
-		return true;
-	}
-
-	function handleOnScroll() {
-		if (y > 250) {
-			hidden = false;
-		} else {
-			hidden = true;
-		}
-	}
-
-	function handleAutoScrollToggle() {
-		isAutoScrollEnabled = !isAutoScrollEnabled;
-		if (isAutoScrollEnabled) {
-			scrollInterval = setInterval(() => {
-				window.scrollBy(0, 1);
-			}, 100); // Scroll 3 vertical pixels every 300ms
-		} else {
-			clearInterval(scrollInterval);
-		}
-	}
-
-	let search_results: SongType[] = [];
-	function handleSearch(event: Event & { currentTarget: EventTarget & HTMLInputElement }) {
-		let query: string = event.currentTarget.value.toLowerCase();
-		search_results = songs
-			.filter((n) => {
-				return n.lyrics.toLowerCase().includes(query);
-			})
-			.slice(0, 10);
+	function scrollToTop() {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
 	}
 </script>
 
-<section>
+<svelte:window bind:scrollY />
+
+<div class="songbook">
 	<h1>Laulukirja</h1>
 
-	<div class="searchresults">
-		<input
-			type="text"
-			id="search"
-			placeholder="Hae laulua"
-			on:input={(event) => handleSearch(event)} />
-		{#if search_results.length > 0}
-			<ul>
-				{#each search_results as song}
-					<li>
-						<span
-							on:click={() => scrollTo(song)}
-							on:keydown={() => scrollTo(song)}
-							role="button"
-							tabindex="0">
-							{song.title}
-						</span>
-					</li>
+	<!-- Search bar and results -->
+	<div class="controls">
+		<div class="search-container">
+			<input
+				type="text"
+				placeholder="Hae laulua tai sanoitusta..."
+				on:input={handleSearch}
+				class="search-input"
+				bind:this={searchInput} />
+
+			{#if searchResults.length > 0}
+				<div class="search-results">
+					{#each searchResults as song (song.id)}
+						<button class="result-button" on:click={() => scrollToSong(song)}>
+							<span class="song-title">{song.title}</span>
+							<span class="original-artist"
+								>{`${song.originalArtist} - ${song.originalSong}`}</span>
+						</button>
+					{/each}
+				</div>
+			{/if}
+		</div>
+
+		<!-- Year dropdown menu -->
+		<div class="year-select">
+			<select bind:value={selectedYear} class="year-dropdown">
+				{#each years as year}
+					<option value={year}>
+						{#if year === 2014}
+							{productions[year]}
+						{:else}
+							{year} – {productions[year]}
+						{/if}
+					</option>
 				{/each}
-			</ul>
-		{/if}
+			</select>
+		</div>
 	</div>
 
-	<div class="filters">
-		<Filters bind:filters {years} />
-		{#if songs_filtered}
-			<div id="top" class="songlist">
-				{#each songs_filtered as song}
-					<span
-						on:click={() => scrollTo(song)}
-						on:keydown={() => scrollTo(song)}
-						role="button"
-						tabindex="0">
-						{song.title}
+	<!-- Song list -->
+	<div class="songs-container">
+		{#each displayedSongs as song (song.id)}
+			<div class="song-card" id={song.title}>
+				<div class="song-header">
+					<h2>{song.title}</h2>
+					<span class="original-artist">
+						alkup. {song.originalArtist} - {song.originalSong}
 					</span>
-				{/each}
-			</div>
-		{/if}
-	</div>
+				</div>
+				<div class="song-info">
+					{#if song.year !== 2014}
+						<span
+							>{productions[song.year]} - {song.scene}. kohtaus, {song.typeName}</span>
+					{/if}
+				</div>
 
-	<div class="songs">
-		{#each songs_filtered as song}
-			<div class="song">
-				<h2 id={song.title}>{song.title}</h2>
-				{#if song.year != 2014}
-					<span class="info">HybridiSpeksi {song.year}: {song.production}</span>
-					<!-- <span>{song.type} kohtauksesta {song.scene} </span> -->
-				{/if}
-				<span class="info"
-					>Alkuperäinen esittäjä ja kappale: {song.original_artist} - {song.original_song}</span>
 				<div class="lyrics">
-					{#each song.lyrics.split('\n\n') as pg}
-						<span class="verse">
-							{#each pg.split('\n') as line}
-								<span class="line">{line}</span>
+					{#each song.lyrics.split('\r\n\r') as verse}
+						<div class="verse">
+							{#each verse.split('\r\n') as line}
+								<div class="line">{line}</div>
 							{/each}
-						</span>
+						</div>
 					{/each}
 				</div>
 			</div>
 		{/each}
 	</div>
 
-	<button class="autoscroll" on:click={handleAutoScrollToggle}>
-		{isAutoScrollEnabled ? 'Lopeta vieritys' : 'Aloita vieritys'}
-	</button>
-
-	<button class="go-top" on:click={() => scrollTo('top')} class:hidden aria-hidden="true">
-		Palaa alkuun
-	</button>
-</section>
-
-<svelte:window bind:scrollY={y} on:scroll={handleOnScroll} />
+	<!-- Scroll to top button -->
+	{#if showScrollTop}
+		<button class="scroll-top-button" on:click={scrollToTop} aria-label="Palaa ylös">
+			<MdiArrowUp />
+		</button>
+	{/if}
+</div>
 
 <style lang="scss">
 	:global(body) {
@@ -172,165 +161,192 @@
 		}
 	}
 
-	section {
+	.songbook {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 2rem;
+
+		h1 {
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+	}
+
+	.controls {
+		margin: 0 auto;
+		max-width: 550px;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		& > div {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			margin: 1rem;
+		gap: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	.search-container {
+		position: relative;
+		width: 100%;
+
+		.search-input {
+			width: 100%;
 			padding: 1rem;
-			border: 1px solid #000;
-			border-radius: 5px;
-			box-shadow: 2px 2px 5px #000;
-		}
-	}
+			font-size: 1.1rem;
+			border: 2px solid #eee;
+			border-radius: 8px;
+			transition: border-color 0.2s;
 
-	button {
-		margin: 1rem;
-		padding: 0.5rem 1rem;
-		cursor: pointer;
-		background-color: #4b62e4;
-		border: none;
-		border-radius: 5px;
-		color: white;
-		&:hover {
-			background-color: #192ea5;
+			&:focus {
+				outline: none;
+				border-color: #4b62e4;
+			}
 		}
-	}
 
-	.searchresults {
-		ul {
-			display: flex;
-			flex-wrap: wrap;
-			align-items: center;
-			justify-content: center;
-		}
-		li {
-			margin: 0.5rem;
-			list-style: none;
-			span {
-				cursor: pointer;
-				background-color: #4b62e4;
+		.search-results {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			background: white;
+			border-radius: 8px;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+			margin-top: 0.3rem;
+			max-height: 500px;
+			overflow-y: auto;
+			z-index: 1000;
+
+			.result-button {
+				width: 100%;
+				padding: 1rem;
 				border: none;
-				border-radius: 10%;
-				padding: 0.2rem;
+				background: transparent;
+				cursor: pointer;
+				text-align: left;
+				display: flex;
+				flex-direction: column;
+				gap: 0.25rem;
+
 				&:hover {
-					text-decoration: underline;
-					background-color: #192ea5;
+					background: #f5f5f5;
+				}
+
+				.song-title {
+					font-weight: bold;
+					color: #333;
+				}
+
+				.original-artist {
+					font-size: 0.9rem;
+					color: #666;
 				}
 			}
 		}
 	}
 
-	.songlist {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
-		margin: 1rem;
-		span {
-			margin: 0.5rem;
+	.year-select {
+		width: 100%;
+
+		.year-dropdown {
+			width: 100%;
+			padding: 1rem;
+			font-size: 1.1rem;
+			border: 2px solid #eee;
+			border-radius: 8px;
+			background: white;
 			cursor: pointer;
-			background-color: #4b62e4;
-			border: none;
-			border-radius: 10%;
-			padding: 0.2rem;
-			&:hover {
-				text-decoration: underline;
-				background-color: #192ea5;
+
+			&:focus {
+				outline: none;
+				border-color: #4b62e4;
 			}
 		}
 	}
 
-	.songs {
-		display: flex;
-		flex-direction: column;
-		margin: 0.8rem;
+	.songs-container {
+		display: grid;
+		gap: 1.5rem;
 
-		.song {
-			display: flex;
-			flex-direction: column;
-			margin: 1rem 0;
-			padding: 1rem;
-			span.info {
-				padding: 0.5rem 0.8rem;
-				font-style: italic;
+		.song-card {
+			background: #f6eee3;
+			border-radius: 12px;
+			padding: 2rem;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			transition: background-color 0.3s ease;
+
+			h2 {
+				margin: 0 0 1rem;
+				color: #333;
+				display: inline-block;
+				@media screen and (max-width: 768px) {
+					margin: 0 0 0.4rem;
+				}
 			}
-			.lyrics {
+
+			.song-header {
 				display: flex;
-				flex-direction: column;
-				padding: 0.8rem;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: 0rem 1.5rem;
+			}
+
+			.original-artist {
+				font-style: italic;
+				display: inline-block;
+				color: #666;
+				@media screen and (max-width: 768px) {
+					margin-bottom: 0.3rem;
+				}
+			}
+
+			.song-info {
+				gap: 0.5rem;
+				margin-bottom: 1.5rem;
+				color: #666;
+				@media screen and (max-width: 768px) {
+					margin-bottom: 1.5rem;
+				}
+			}
+
+			.lyrics {
+				color: #333;
 				.verse {
-					display: flex;
-					flex-direction: column;
-					padding: 0.8rem 0;
+					margin-bottom: 1.5rem;
+
 					.line {
-						line-height: 1.6rem;
+						line-height: 1.6;
 					}
 				}
 			}
 		}
 	}
 
-	.go-top {
-		height: 60px;
-		width: 100px;
-		opacity: 1;
-		transition:
-			opacity 0.5s,
-			visibility 0.5s;
+	.scroll-top-button {
 		position: fixed;
-		z-index: 99;
-		right: 20px;
-		user-select: none;
-		cursor: pointer;
-		bottom: 100px;
-		background-color: #4b62e4;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		bottom: 2rem;
+		right: 2rem;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background: #4b62e4;
+		color: white;
 		border: none;
-		border-radius: 10%;
-		padding: 0.2rem;
+		cursor: pointer;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		transition: all 0.2s;
 
-		&.hidden {
-			opacity: 0;
-			visibility: hidden;
-		}
 		&:hover {
-			scale: 1.1;
+			transform: translateY(-2px);
+			background: #192ea5;
 		}
 	}
 
-	.autoscroll {
-		height: 60px;
-		width: 100px;
-		opacity: 1;
-		transition:
-			opacity 0.5s,
-			visibility 0.5s;
-		position: fixed;
-		z-index: 99;
-		right: 20px;
-		user-select: none;
-		cursor: pointer;
-		bottom: 20px;
-		background-color: #4b62e4;
-		border: none;
-		border-radius: 10%;
-		padding: 0.2rem;
-
-		&:hover {
-			scale: 1.1;
+	@media (max-width: 768px) {
+		.songbook {
+			padding: 1rem;
 		}
 
-		/* TODO: implement
-		&.hidden {
-			opacity: 0;
-			visibility: hidden;
+		.songs-container .song-card {
+			padding: 1.5rem;
 		}
-		*/
 	}
 </style>

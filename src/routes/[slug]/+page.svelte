@@ -23,15 +23,6 @@
 	.page {
 		min-height: 85vh;
 	}
-/*
-	.wrap {
-		@media (max-width: 768px) {
-			height: 30vh;
-		}
-	}
-	*/
-
-
 	.top-banner {
 		align-items: center;
 		justify-content: center;
