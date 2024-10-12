@@ -51,6 +51,7 @@
 		--black-hex: #0e0e0e;
 		--white-rgb: 217, 217, 217;
 		--gray-rgb: 114, 114, 114;
+		--dark-gray-rgb: 92, 92, 92;
 		--black-rgb: 14, 14, 14;
 		--navbar-bg: rgba(var(--black-rgb), 0.6);
 		--navbutton-bg: rgba(var(--black-rgb), 0.85);

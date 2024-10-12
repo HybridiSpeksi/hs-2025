@@ -61,8 +61,6 @@
 			const element = document.getElementById(song.title);
 			if (element) {
 				element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-				element.classList.add('highlight');
-				setTimeout(() => element.classList.remove('highlight'), 2000);
 			}
 		}, 100);
 	}
@@ -108,7 +106,7 @@
 						{#if year === 2014}
 							{productions[year]}
 						{:else}
-							{year} – {productions[year]}
+							{year} - {productions[year]}
 						{/if}
 					</option>
 				{/each}
@@ -265,6 +263,7 @@
 
 		.song-card {
 			background: #f6eee3;
+			scroll-margin-top: 1rem;
 			border-radius: 12px;
 			padding: 2rem;
 			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

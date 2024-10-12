@@ -31,7 +31,7 @@
 					{/each}
 				</ul>
 			</div>
-			<div class="address">
+			<div class="contacts">
 				<h2>Yhteystiedot</h2>
 				<ContactsList {contacts} />
 			</div>
@@ -92,6 +92,13 @@
 			min-width: 300px;
 		}
 	}
+
+	.contacts {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
 	.footer-bottom {
 		width: 100%;
 		display: flex;

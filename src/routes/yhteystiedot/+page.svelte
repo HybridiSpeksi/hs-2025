@@ -34,22 +34,24 @@
 </div>
 
 <style>
-	@media only screen and (max-width: 768px) {
-		.wrap {
-			padding: 0 20px;
+	.sopo-bg {
+		margin: 0 auto;
+		max-width: 700px;
+		padding: 0.1rem 0 0.5rem 0;
+		background-color: rgba(var(--dark-gray-rgb), 0.8);
+		@media screen and (min-width: 768px) {
+			border-radius: 10px;
 		}
 	}
 
-	.sopo-bg {
-		padding: 0.1rem 0 0.5rem 0;
-		background-color: rgba(var(--gray-rgb), 0.7);
-	}
-
 	.contacts {
-		background-color: rgba(var(--gray-rgb), 0.7);
+		background-color: rgba(var(--dark-gray-rgb), 0.8);
 		color: var(--white-hex);
 		& .address {
 			padding: 3rem 0;
+			@media screen and (max-width: 768px) {
+				padding: 2rem 0;
+			}
 		}
 	}
 </style>
