@@ -1,6 +1,6 @@
 export const prerender = true;
 
-import { WP_REST_API_URL } from '$env/static/private';
+import { PUBLIC_WP_REST_API_URL as restUrl } from '$env/static/public';
 import type { WPSong, Song } from '$lib/types/songs';
 
 /** @type {import('./$types').LayoutLoad} */
@@ -9,13 +9,13 @@ export const load = async ({ fetch }) => {
 	const ITEMS_PER_PAGE = 100;
 
 	// Find the total number of songs from X-WP-Total header
-	const res = await fetch(`${WP_REST_API_URL}/songs?per_page=1`);
+	const res = await fetch(`${restUrl}/songs?per_page=1`);
 	const totalSongs = Number(res.headers.get('X-WP-Total'));
 	const totalPages = Math.ceil(totalSongs / ITEMS_PER_PAGE);
 
 	// Promises to fetch all songs
 	const songPromises = Array.from({ length: totalPages }, (_, i) =>
-		fetch(`${WP_REST_API_URL}/songs/?per_page=${ITEMS_PER_PAGE}&page=${i + 1}`).then((res) =>
+		fetch(`${restUrl}/songs/?per_page=${ITEMS_PER_PAGE}&page=${i + 1}`).then((res) =>
 			res.json(),
 		),
 	);

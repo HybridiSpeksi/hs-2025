@@ -261,20 +261,20 @@
 	}
 	button {
 		margin-top: 25px;
-		border: var(--black-hex) solid 3px;
+		border: var(--black) solid 3px;
 		font-size: 16px;
 		&:hover {
-			background-color: var(--black-hex);
-			color: var(--white-hex);
+			background-color: var(--black);
+			color: var(--white);
 		}
 	}
 	.container {
 		display: flex;
 		flex-direction: column;
-		background-color: var(--white-hex);
-		border: var(--gray-hex) 10px solid;
+		background-color: var(--white);
+		border: var(--gray) 10px solid;
 		border-radius: 30px;
-		color: var(--black-hex);
+		color: var(--black);
 		width: 80%;
 		padding: 25px;
 		margin: auto;

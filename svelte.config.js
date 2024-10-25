@@ -22,7 +22,8 @@ const config = {
 			// an alias ending /* will only match
 			// the contents of a directory, not the directory itself
 			//'my-directory/*': 'path/to/my-directory/*'
-			'$styles': 'src/styles',
+			'@styles': 'src/styles',
+			'@images': 'src/lib/images',
 		}
 	}
 };

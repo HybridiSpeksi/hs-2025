@@ -226,7 +226,7 @@
 	</div>
 
 	<div class="content">
-		<h2 class="neon center">HybridiSpeksi 2024 esittää: Kevätpäivänseisaus!</h2>
+		<h2 class="neon global-center">HybridiSpeksi 2024 esittää: Kevätpäivänseisaus!</h2>
 		<div class="times">
 			<div class="kapow" bind:this={kapow}>
 				<h2>Esitykset</h2>
@@ -265,7 +265,7 @@
 	</div>
 
 	<Sponsors sponsors={data.sponsors} />
-	<div class="wrap"><Quizz id={quizz_id} /></div>
+	<div class="global-wrap"><Quizz id={quizz_id} /></div>
 </div>
 
 <style lang="scss">
@@ -360,7 +360,7 @@
 			background-repeat: no-repeat;
 			background-size: 100% 100%;
 			background-position: center;
-			color: var(--black-hex);
+			color: var(--black);
 			font-weight: 600;
 			font-size: 20px;
 			padding: 150px;
@@ -453,7 +453,7 @@
 
 	@font-face {
 		font-family: 'Beon';
-		src: url('$lib/fonts/BeonMedium-6d51-webfont.woff2') format('woff2');
+		src: url('/fonts/BeonMedium-6d51-webfont.woff2') format('woff2');
 		font-display: swap;
 	}
 

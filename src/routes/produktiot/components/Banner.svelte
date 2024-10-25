@@ -20,7 +20,7 @@
 	}
 </script>
 
-<img src={imageSrc} {alt} loading="lazy" on:error={() => getDefault()} />
+<img src={imageSrc} {alt} on:error={() => getDefault()} />
 
 <style>
 	img {

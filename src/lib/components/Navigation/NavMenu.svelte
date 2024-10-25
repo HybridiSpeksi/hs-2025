@@ -31,7 +31,7 @@
 		</ul>
 	{:else}
 		<div class="loading">
-			<!--<Moon size="60" color="var(--white-hex)" unit="px" duration="1s" />-->
+			<!--<Moon size="60" color="var(--white)" unit="px" duration="1s" />-->
 			<h4>Ladataan...</h4>
 		</div>
 	{/if}
@@ -99,7 +99,7 @@
 	}
 
 	.nav-menu a:hover {
-		color: var(--gray-hex);
+		color: var(--gray);
 	}
 
 	.nav-menu ul {
