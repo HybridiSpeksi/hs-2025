@@ -1,11 +1,11 @@
-export const prerender = false;
+export const prerender = true;
 
-import { WP_REST_API_URL } from '$env/static/private';
+import { PUBLIC_WP_REST_API_URL as restUrl } from '$env/static/public';
 import type { Person } from '$lib/types/common';
 import type { ApiPersonResponse } from '$lib/types/wp-api';
 
 export const load = async ({ fetch }) => {
-	const response = await fetch(`${WP_REST_API_URL}/people?per_page=100`);
+	const response = await fetch(`${restUrl}/people?per_page=100`);
 	if (!response.ok) {
 		console.error('Error fetching people');
 		return { people: [] };
@@ -35,7 +35,7 @@ export const load = async ({ fetch }) => {
 	let sopoHTML;
 	let sopoTitle;
 	try {
-		const res = await fetch(`${WP_REST_API_URL}/pages/2136`);
+		const res = await fetch(`${restUrl}/pages/2136`);
 		const data = await res.json();
 		sopoHTML = data.content.rendered;
 		sopoTitle = data.title.rendered;

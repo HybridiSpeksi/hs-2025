@@ -1,0 +1,17 @@
+/* Global CSS variables */
+:root {
+    --white: #d9d9d9;
+    --gray: #727272;
+    --black: #1e1e1e;
+    --light-blue: #bff0ff;
+    --white-rgb: 217, 217, 217;
+    --gray-rgb: 114, 114, 114;
+    --dark-gray-rgb: 92, 92, 92;
+    --black-rgb: 14, 14, 14;
+    --bg-color: var(--black);
+    --navbar-bg: color-mix(in srgb, black, transparent 60%);
+    --navbutton-bg: color-mix(in srgb, black, transparent 60%);
+    --navbutton-bg-sidebar: transparent;
+    --sidebar-bg: color-mix(in srgb, black, transparent 10%);
+    --footer-bg: #101010;
+}

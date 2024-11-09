@@ -1,38 +1,50 @@
-export const prerender = false;
+export const prerender = true;
 
-import { WP_REST_API_URL } from '$env/static/private';
+import { PUBLIC_WP_REST_API_URL as restUrl } from '$env/static/public';
 import { error } from '@sveltejs/kit';
 import type { SinglePageContent } from '$lib/types/content';
 
 function getSlug(href: string): string | undefined {
-	const segments = new URL(href).pathname.split('/');
-	const last = segments.pop() || segments.pop();
-	return last;
+    const segments = new URL(href).pathname.split('/');
+    const last = segments.pop() || segments.pop();
+    return last;
 }
 
 /** @type {import('./$types').PageServerLoad} */
 export const load = async ({ url, fetch }) => {
-	const slug = getSlug(url.href);
+    const slug = getSlug(url.href);
 
-	let res: Response;
-	try {
-		res = await fetch(`${WP_REST_API_URL}/pages?&acf_format=standard&slug=${slug}`);
-	} catch (e) {
-		console.error('Error fetching page by slug:', e instanceof Error ? e.message : '');
-		error(404, {
-			message: `Sivua ${slug} ei löytynyt :(`
-		});
-	}
+    let res: Response;
+    try {
+        res = await fetch(`${restUrl}/pages?&acf_format=standard&slug=${slug}`);
 
-	const data = await res.json();
+        if (!res.ok) {
+            throw error(res.status, {
+                message: `Ongelma sivun ${slug} lataamisessa`,
+            });
+        }
 
-	const pageData = data.length > 0 ? data[0] : null;
+        const data = await res.json();
 
-	const returnPageData: SinglePageContent = {
-		title: pageData?.title.rendered,
-		contentHTML: pageData?.content.rendered,
-		bannerUrl: pageData?.acf.banner_image
-	};
+        if (!data || data.length === 0) {
+            throw error(404, {
+                message: `Sivua ${slug} ei löytynyt :(`,
+            });
+        }
 
-	return returnPageData;
+        const pageData = data[0];
+
+        const returnPageData: SinglePageContent = {
+            title: pageData.title.rendered,
+            contentHTML: pageData.content.rendered,
+            bannerUrl: pageData.acf?.banner_image,
+        };
+
+        return returnPageData;
+    } catch (e) {
+        if (e instanceof Error) throw e;
+        throw error(404, {
+            message: `Sivua ${slug} ei löytynyt :(`,
+        });
+    }
 };

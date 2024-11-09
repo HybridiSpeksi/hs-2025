@@ -153,12 +153,6 @@
 </div>
 
 <style lang="scss">
-	:global(body) {
-		&::before {
-			background-image: none !important;
-		}
-	}
-
 	.songbook {
 		max-width: 800px;
 		margin: 0 auto;

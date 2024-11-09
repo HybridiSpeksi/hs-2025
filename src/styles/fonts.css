@@ -1,0 +1,31 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/Poppins-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/Poppins-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Comic Neue';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/ComicNeue-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Comic Neue';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/ComicNeue-Bold.woff2') format('woff2');
+}

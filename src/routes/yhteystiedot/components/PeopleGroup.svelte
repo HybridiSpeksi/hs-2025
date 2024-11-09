@@ -58,7 +58,7 @@
 </script>
 
 <div class="people index-{index % 2}">
-	<div class="wrap">
+	<div class="global-wrap">
 		<h2 class="type">{type}</h2>
 		<div class="people-grid">
 			{#each peopleGroup as person}
@@ -78,12 +78,12 @@
 
 	.index-0 {
 		background-color: rgba(var(--black-rgb), 0.6);
-		color: var(--white-hex);
+		color: var(--white);
 	}
 
 	.index-1 {
 		background-color: rgba(var(--white-rgb), 1);
-		color: var(--black-hex);
+		color: var(--black);
 	}
 
 	.people-grid {

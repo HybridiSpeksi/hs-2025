@@ -2,7 +2,7 @@
 	import { page } from '$app/stores'
 </script>
 
-<div class="center error">
+<div class="global-center error">
 	<h1>{$page.status} - {$page.error?.message}</h1>
 </div>
 

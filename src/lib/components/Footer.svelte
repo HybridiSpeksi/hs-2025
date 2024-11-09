@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { ContactItem, NavigationObject, NavigationItem } from '$lib/types/content';
 	import ContactsList from '$lib/components/ContactsList.svelte';
-	import '$styles/app.scss';
 	import { page } from '$app/stores';
 	import logo from '$lib/images/logo_white.avif';
 	let contacts: ContactItem = $page.data.address;
@@ -21,7 +20,7 @@
 </script>
 
 <section>
-	<div class="wrap">
+	<div class="global-wrap">
 		<div class="footer-top">
 			<div class="pages">
 				<h2>Sivut</h2>
@@ -64,13 +63,13 @@
 	section {
 		padding-top: 2rem;
 		padding-bottom: 0.5rem;
-		background-color: var(--black-hex);
-		color: var(--white-hex);
+		background-color: var(--footer-bg);
+		color: var(--white);
 		display: flex;
 		flex-direction: column;
 
 		a {
-			color: var(--white-hex);
+			color: var(--white);
 			text-decoration: underline;
 		}
 		li {

@@ -1,8 +1,6 @@
 .DS_Store
 node_modules
-speksien_logot
 test-results
-unused
 build
 .svelte-kit
 package
