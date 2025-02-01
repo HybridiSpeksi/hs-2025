@@ -180,3 +180,77 @@ a.btn {
         }
     }
 }
+
+.newspaper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 100%;
+    min-height: 80vh;
+    padding: 2rem;
+    border: 3px solid black;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    color: #0a0a0a;
+    position: relative;
+    overflow: hidden;
+    background: url('/images/bedge-grunge.avif') repeat center center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    filter: grayscale(100%) contrast(100%) brightness(100%);
+}
+
+.newspaper * {
+    filter: grayscale(60%) contrast(105%) brightness(85%);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    mix-blend-mode: multiply; 
+    opacity: 0.95; 
+    font-family: 'IM Fell English', serif; 
+    letter-spacing: 0.01em;
+    font-weight: normal;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.newspaper p {
+    padding: 0;
+    margin: 0;
+}
+
+.highlight {
+    background: rgba(255, 255, 100, 0.6);
+    padding: 0 4px;
+    border-radius: 3px;
+    mix-blend-mode: multiply; 
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: 80%;
+    background: rgba(255, 255, 100, 0.5);
+    filter: blur(1.5px);
+    z-index: -1;
+    border-radius: 3px;
+}
+
+.highlight::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -3px;
+    width: calc(100% + 6px);
+    height: 85%;
+    background: rgba(255, 255, 100, 0.4);
+    filter: blur(3px);
+    z-index: -2;
+    border-radius: 3px;
+}
+
+
+
+
+

@@ -1,6 +1,8 @@
 <script lang="ts">
     import Sponsors from '$lib/components/Sponsors.svelte';
     export let data;
+
+    console.log("Data: ", data)
 </script>
 
 <div class="page">
