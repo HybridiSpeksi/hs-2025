@@ -1,3 +1,30 @@
+/*
+* variables used for newspaper styles
+*/
+
+:root {
+    --np-bg: #f8f8f8;
+    --np-text: #0a0a0a;
+    --np-shadow: 1px 1px 1px rgba(0.5, 0.5, 0.5, 0.5);
+    --np-overlay: url('/images/paper.avif');
+    --np-blend-mode: multiply;
+    --np-filter: grayscale(100%) contrast(100%) brightness(100%);
+    --np-font: 'IM Fell English', serif;
+    --np-opacity: 0.90;
+    --text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.newspaper-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    margin: 0 auto;
+    background: var(--np-bg);
+}
+
 .newspaper {
     display: flex;
     flex-direction: column;
@@ -5,69 +32,24 @@
     max-width: 100%;
     min-height: 80vh;
     padding: 2rem;
-    border: 3px solid black;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-    color: #0a0a0a;
+    box-shadow: var(--np-shadow);
+    color: var(--np-text);
     position: relative;
     overflow: hidden;
-    background: url('/images/old_paper_2.avif') repeat center center;
+    background: var(--np-overlay) repeat center center;
     background-size: cover;
-    background-blend-mode: multiply;
-    filter: grayscale(100%) contrast(100%) brightness(100%);
+    background-blend-mode: var(--np-blend-mode);
+    filter: var(--np-filter);
 }
 
 .newspaper * {
-    filter: grayscale(60%) contrast(105%) brightness(85%);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    mix-blend-mode: multiply; 
-    opacity: 0.95; 
-    font-family: 'IM Fell English', serif; 
-    letter-spacing: 0.01em;
-    font-weight: normal;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: var(--text-shadow);
+    mix-blend-mode: multiply;
+    opacity: var(--np-opacity);
+    font-family: var(--np-font);
 }
 
 .newspaper p {
     padding: 0;
     margin: 0;
 }
-
-.highlight {
-    background: rgba(255, 255, 100, 0.6);
-    padding: 0 4px;
-    border-radius: 3px;
-    mix-blend-mode: multiply; 
-    position: relative;
-    display: inline-block;
-}
-
-.highlight::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -2px;
-    width: calc(100% + 4px);
-    height: 80%;
-    background: rgba(255, 255, 100, 0.5);
-    filter: blur(1.5px);
-    z-index: -1;
-    border-radius: 3px;
-}
-
-.highlight::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -3px;
-    width: calc(100% + 6px);
-    height: 85%;
-    background: rgba(255, 255, 100, 0.4);
-    filter: blur(3px);
-    z-index: -2;
-    border-radius: 3px;
-}
-
-
-
-
-

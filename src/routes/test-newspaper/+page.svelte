@@ -2,4 +2,7 @@
 import Newspaper from "$lib/components/newspaper/Newspaper.svelte";
 </script>
 
-<Newspaper></Newspaper>
+<div class="newspaper-wrapper">
+  <Newspaper></Newspaper>
+  <Newspaper></Newspaper>
+</div>
