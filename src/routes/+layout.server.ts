@@ -22,8 +22,6 @@ export const load = async ({ fetch }) => {
     try {
         const sponsorRes = await fetch(`${wpUrl}/sponsor?per_page=50`);
         const data: ApiSponsorResponse[] = await sponsorRes.json();
-        console.log('navigations: ', navigations);
-        console.log('navigationsRes: ', navigationsRes);
 
         sponsors = data.map(
             (item): Sponsor => ({
