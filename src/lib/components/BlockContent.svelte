@@ -44,7 +44,7 @@
         max-width: 1000px;
         margin: 0 auto;
 
-		:global(p) {
+        :global(p) {
             font-size: 19px;
             @media (max-width: 767px) {
                 font-size: 15px;
