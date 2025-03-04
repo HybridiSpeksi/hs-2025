@@ -8,9 +8,9 @@
         const path = pathname.slice(1);
         switch (pathname) {
             case '/':
-                return 'HybridiSpeksi';
-            case '/2025':
                 return 'Kippis ja Kavallus | HybridiSpeksi';
+            case '/2024':
+                return 'Kevätpäivänseisaus | HybridiSpeksi';
             case '/hybridispeksi-ry-yhdistyksen-saannot':
                 return 'Yhdistyksen säännöt | HybridiSpeksi';
             case '/hybridispeksi-ryn-merkkiohjesaanto':
