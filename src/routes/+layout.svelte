@@ -9,8 +9,8 @@
         switch (pathname) {
             case '/':
                 return 'HybridiSpeksi';
-            case '/kevatpaivanseisaus':
-                return 'Kevätpäivänseisaus | HybridiSpeksi';
+            case '/2025':
+                return 'Kippis ja Kavallus | HybridiSpeksi';
             case '/hybridispeksi-ry-yhdistyksen-saannot':
                 return 'Yhdistyksen säännöt | HybridiSpeksi';
             case '/hybridispeksi-ryn-merkkiohjesaanto':
@@ -33,9 +33,7 @@
 </svelte:head>
 
 <Navbar />
-<div>
-    <slot />
-</div>
+<slot />
 <Footer />
 
 <style>

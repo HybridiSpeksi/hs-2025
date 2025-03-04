@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let hasTitleOf: string;
+    export let hasTitleOf: string = '';
 </script>
 
 <article class="article">
@@ -14,7 +14,7 @@
 
 <style lang="scss">
     .article {
-        margin: 1rem;
+        margin: 1rem auto;
     }
 
     .title {
@@ -34,7 +34,10 @@
     }
 
     .news-section {
+        font-size: 1.5rem;
         display: flex;
+        align-items: center;
+        max-width: 35rem;
         flex-direction: column;
         gap: 0.2rem;
         padding: 0.5rem;
