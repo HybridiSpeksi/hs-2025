@@ -3,7 +3,7 @@
 
     export let hasTitleOf: string = '';
     export let pageNumber: string = '';
-    export let date: string = new Date().toLocaleDateString();
+    export let date: string = pageNumber == '1' ? new Date().toLocaleDateString() : '';
 </script>
 
 <section class="newspaper">
@@ -33,10 +33,7 @@
         position: relative;
         overflow: hidden;
         background-color: #e0ddd9;
-        background: url('/images/paper.avif') repeat center center;
-        background-size: cover;
-        background-blend-mode: multiply;
-        /* filter: grayscale(100%) contrast(100%) brightness(100%); */
+        background-image: radial-gradient(circle at center, #e8e5e1 0%, #e0ddd9 45%, #d6d2cc 100%);
         @media (min-width: 1000px) {
             max-width: 1000px;
         }
@@ -49,7 +46,6 @@
         margin: 0;
         font-weight: 400;
         text-shadow: 0.2px 0.2px 0.5px rgba(0, 0, 0, 0.2);
-        mix-blend-mode: darken;
         font-variant-ligatures: historical-ligatures;
     }
 
@@ -70,6 +66,8 @@
 
     .newspaper :global(img) {
         max-width: 100%;
+        height: auto;
+        will-change: transform;
     }
 
     .newspaper-header {
