@@ -8,6 +8,23 @@
     --gray-rgb: 114, 114, 114;
     --dark-gray-rgb: 92, 92, 92;
     --black-rgb: 14, 14, 14;
+
+    --alice-blue: #f0f8ff;
+    --millenium-blue: #002244;
+    --glaucous: #6082b6;
+    --sapphire: #0f52ba;
+    --dark-magenta: #8b008b;
+    --periwinkle-purple: #be93e4;
+    --relax-yellow: #f3e496;
+
+    --bisque: #ffe4c4;
+    --deep-brown: #410200;
+    --bark: #996633;
+    --brownie: #964b00;
+    --beer-orange: #f28f1c;
+    --flame: #e34a27;
+    --forest-green: #0b6623;
+
     --bg-color: var(--black);
     --navbar-bg: color-mix(in srgb, black, transparent 60%);
     --navbutton-bg: color-mix(in srgb, black, transparent 60%);

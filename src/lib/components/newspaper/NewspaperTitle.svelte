@@ -12,6 +12,7 @@
 
 <style lang="scss">
     .newspaper-title {
+        max-width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -29,6 +30,7 @@
     }
 
     .line {
+        max-width: 100%;
         width: 100%;
         height: 1px;
         background-color: black;

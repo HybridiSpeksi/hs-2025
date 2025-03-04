@@ -29,3 +29,19 @@
     font-weight: 700;
     src: url('/fonts/ComicNeue-Bold.woff2') format('woff2');
 }
+
+@font-face {
+    font-display: swap;
+    font-family: 'Seaside Resort';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/SeasideResortNF.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Josefin Slab';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/JosefinSlab-VariableFont_wght.woff2') format('woff2');
+}

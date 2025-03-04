@@ -37,8 +37,12 @@
     .sopo-bg {
         margin: 0 auto;
         padding: 0.1rem 0 0.5rem 0;
-        background-color: var(--light-blue);
-        color: var(--black);
+        background-color: var(--bark);
+        color: var(--white);
+    }
+
+    .sopo-bg :global(a) {
+        color: inherit;
     }
 
     .contacts {
