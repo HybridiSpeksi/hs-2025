@@ -32,6 +32,7 @@
         color: #0a0a0a;
         position: relative;
         overflow: hidden;
+        background-color: #e0ddd9;
         background: url('/images/paper.avif') repeat center center;
         background-size: cover;
         background-blend-mode: multiply;
