@@ -8,7 +8,7 @@
         const path = pathname.slice(1);
         switch (pathname) {
             case '/':
-                return 'Kippis ja Kavallus | HybridiSpeksi';
+                return 'Kippis ja kavallus | HybridiSpeksi';
             case '/2024':
                 return 'Kevätpäivänseisaus | HybridiSpeksi';
             case '/hybridispeksi-ry-yhdistyksen-saannot':
@@ -28,7 +28,7 @@
     <meta name="description" content="HybridiSpeksin verkkosivut" />
     <meta
         name="keywords"
-        content="HybridiSpeksi, speksi, teatteri, opiskelija, opiskelijateatteri, Turku, UTU, Turun Yliopisto, University of Turku" />
+        content="HybridiSpeksi, speksi, Turun speksit, teatteri, opiskelija, opiskelijateatteri, Turku, UTU, Turun Yliopisto, University of Turku" />
     <title>{getPageTitle($page.url.pathname)}</title>
 </svelte:head>
 
