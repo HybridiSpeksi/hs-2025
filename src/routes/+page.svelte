@@ -28,7 +28,7 @@
 
 <main class="page">
     <Newspaper hasTitleOf="HybridiSpeksi 2025 esittää: " pageNumber="1">
-        <img src={logo2025} class="logo" alt="Kippis ja Kavallus -produktion logo" />
+        <img src={logo2025} class="logo" alt="Kippis ja kavallus -produktion logo" />
         <div class="schedule">
             <p>Näytökset Turussa Manilla-teatterilla:</p>
             <ul>
