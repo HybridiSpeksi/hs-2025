@@ -17,6 +17,7 @@
 		2022: 'Inferno: Kunnes Kadotus meidät korjaa',
 		2023: 'Kreivin aikaan',
 		2024: 'Kevätpäivänseisaus',
+		2025: 'Kippis ja kavallus',
 	};
 
 	// State
