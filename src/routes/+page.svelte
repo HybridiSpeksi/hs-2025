@@ -30,7 +30,7 @@
     <Newspaper hasTitleOf="HybridiSpeksi 2025 esittää: " pageNumber="1">
         <img src={logo2025} class="logo" alt="Kippis ja kavallus -produktion logo" />
         <div class="schedule">
-            <p>Näytökset Turussa Manilla-teatterilla:</p>
+            <p>Näytökset esitettiin Turussa Manilla-teatterilla</p>
             <ul>
                 <li>Pe 21.3. klo 19</li>
                 <li>La 22.3. klo 14</li>
@@ -41,14 +41,14 @@
                 <li>Pe 28.3. klo 19</li>
                 <li>La 29.3. klo 14</li>
             </ul>
-            <p>sekä Tampereella Messukylän työväentalolla:</p>
+            <p>sekä Tampereella Messukylän työväentalolla</p>
             <ul>
                 <li>La 5.4. klo 17</li>
             </ul>
+
             <p>
-                <a
-                    href="https://kide.app/community/d96376eb-02ff-4b1b-be75-a959f0fe0c42?fbclid=PAY2xjawIziJFleHRuA2FlbQIxMQABphJrj1S8MdMF9iyix32OtWYbvowOnuvguYqwCOH0IRQjvPXZ8Z3sKrOzQQ_aem_iv7Kiytaoi2Jwh81DGH0tA"
-                    >Linkki Kide.app-lipunmyyntiin</a>
+                Suuri kiitos katsojille, yhteistyökumppaneille ja kaikille produktiossa mukana
+                olleille!
             </p>
         </div>
     </Newspaper>

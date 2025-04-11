@@ -54,19 +54,7 @@ export const load = async ({ fetch }) => {
     }
 
     return {
-        navigations: (navigations || []).map((nav) =>
-            nav.navigation_name === 'top-navigation'
-                ? {
-                      ...nav,
-                      items: [
-                          ...nav.items,
-                          ...(process.env.NODE_ENV === 'development'
-                              ? [{ id: 2200, title: 'Test Newspaper', link: '/test-newspaper' }]
-                              : []),
-                      ],
-                  }
-                : nav,
-        ),
+        navigations: navigations || [],
         sponsors: sponsors,
         address: address || null,
     };
