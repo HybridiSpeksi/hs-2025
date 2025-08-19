@@ -13,7 +13,7 @@
 
 5. Asenna projektin riippuvuudet komennolla `pnpm install` tai `npm install` jos latasit Noden manuaalisesti
 
-6. Luo projektin juurikansioon tiedosto .env ja kopioi siihen drivestä löytyvä teksti. **ÄLÄ** lisää tätä tiedostoa versionhallintaan, vaikka siinä ei olisikaan mitään salaista.
+6. Uudelleennimeä juurihakemiston .env.example -> .env ja lisää siihen puuttuvat osoitteet.
 
 7. Käynnistä Vite-kehitysserveri komennolla `pnpm dev --open` tai `npm run dev -- --open`. Sivu avautuu selaimeesi ja koodiin tehdyt muutokset päivittyvät reaaliaikaisesti.  
 Voit myös lisätä komennon loppuun lipun `--host`, jolloin kehitysserverille pääsee myös lähiverkostasi esim. kirjoittamalla puhelimen selaimen hakukenttään saadun **Network** IP-osoitteen

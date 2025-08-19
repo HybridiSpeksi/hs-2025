@@ -2,6 +2,10 @@
 	"name": "hs-2025",
 	"version": "1.0.0",
 	"private": true,
+	"type": "module",
+	"engines": {
+    	"node": "20"
+  	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -40,7 +44,6 @@
 		"vite": "^5.4.12",
 		"vitest": "^1.6.1"
 	},
-	"type": "module",
 	"dependencies": {
 		"bigger-picture": "^1.1.17",
 		"chart.js": "^4.4.2",
