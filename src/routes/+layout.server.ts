@@ -1,10 +1,10 @@
 export const prerender = true;
-
-import { error } from '@sveltejs/kit';
 import {
     PUBLIC_WP_REST_API_URL as wpUrl,
     PUBLIC_WP_MEDIA_API_URL as mediaUrl,
 } from '$env/static/public';
+console.log(wpUrl, mediaUrl);
+import { error } from '@sveltejs/kit';
 import type { Sponsor } from '$lib/types/common';
 import type { NavigationObject, ContactItem } from '$lib/types/content';
 import type { ApiSponsorResponse } from '$lib/types/wp-api';

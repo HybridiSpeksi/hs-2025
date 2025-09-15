@@ -1,11 +1,7 @@
 <script lang="ts">
-    import Newspaper from '$lib/components/newspaper/Newspaper.svelte';
-    import NewsSection from '$lib/components/newspaper/NewsSection.svelte';
-    import AnimatedImage from '$lib/components/AnimatedImage.svelte';
-    import logo2025 from '$lib/images/2025/logo-2025.avif';
-    import katukuva from '$lib/images/2025/Lehtikuva_katu_ja_peikko.avif';
-    import eetos from '$lib/images/2025/Lehtikuva_työhuone_ja_Eetos.avif';
-    import tyrsky from '$lib/images/2025/Lehtikuva_satama_ja_Tyrsky.avif';
+    import Newspaper from '$lib/components/newspaper_juvu/Newspaper_juvu.svelte';
+    import NewsSection from '$lib/components/newspaper_juvu/NewsSection_juvu.svelte';
+    import Logo_juvu from '$lib/images/juvuspeksi/Logo_juvu.svg';
     import Sponsors from '$lib/components/Sponsors.svelte';
     export let data;
     let y: number;
@@ -27,86 +23,43 @@
 <svelte:window bind:scrollY={y} />
 
 <main class="page">
-    <Newspaper hasTitleOf="HybridiSpeksi 2025 esittää: " pageNumber="1">
-        <img src={logo2025} class="logo" alt="Kippis ja kavallus -produktion logo" />
+    <Newspaper hasTitleOf="HybridiSpeksin 10 v. juhlavuosispeksi esittää:" pageNumber="1">
+        <img src={Logo_juvu} class="logo" alt="Juhlavuosispeksin produktion logo" />
+	<NewsSection>
+	<p>HybridiSpeksin juhlavuosiproduktio 2025 nousee Manillan Aurinkobaletin lavalle lokakuun neljäntenä viikonloppuna neljän näytöksen voimin:</p>
+	</NewsSection>
         <div class="schedule">
-            <p>Näytökset esitettiin Turussa Manilla-teatterilla</p>
             <ul>
-                <li>Pe 21.3. klo 19</li>
-                <li>La 22.3. klo 14</li>
-                <li>Ma 24.3. klo 19</li>
-                <li>Ti 25.3. klo 19</li>
-                <li>Ke 26.3. klo 19</li>
-                <li>To 27.3. klo 19</li>
-                <li>Pe 28.3. klo 19</li>
-                <li>La 29.3. klo 14</li>
+                <li>24.10. klo 18</li>
+                <li>25.10. klo 14</li>
+                <li>25.10. klo 19</li>
+                <li>26.10. klo 14</li>
             </ul>
-            <p>sekä Tampereella Messukylän työväentalolla</p>
-            <ul>
-                <li>La 5.4. klo 17</li>
-            </ul>
-
-            <p>
-                Suuri kiitos katsojille, yhteistyökumppaneille ja kaikille produktiossa mukana
-                olleille!
-            </p>
         </div>
-    </Newspaper>
 
-    <Newspaper pageNumber="2">
         <NewsSection>
             <p>
-                On synkkä ja myrskyinen yö kieltolain aikaisessa Turussa. Kävellessäsi sumuisilla
-                kaduilla voit törmätä niin poliisiin kuin peikkoonkin. Jostain kaukaa saatat kuulla,
-                kuinka nauru raikaa.
+               Vuosikymmennen kestäneen kevään jäljiltä maapallon ilmakehä on haihtumassa avaruuteen ja ihmiskunnan kohtalo roikkuu hiuskarvan varassa. Voisiko ratkaisu löytyä menneisyyden reliikistä; sääsingosta?
+Intohimoinen Tuomi suostuttelee mukaansa entisen yhtiökumppaninsa Junon. Yhdessä he kasaavat tiimin maailman parhaista osaajista ratkaisemaan ongelmaa, mutta yhteen hiileen puhaltaminen ei ehkä olekaan mikään helppo tehtävä.
+
             </p>
-        </NewsSection>
+	<p> 
+	 Tule selvittämään kenen idea ratkaisee maapallon kohtalon ja kuka on valmis saavuttamaan tavoitteensa keinoja kaihtamatta. Voidaanko maapallo vielä pelastaa?
+	</p>
 
-        <AnimatedImage
-            src={katukuva}
-            className="newspaper-image"
-            alt="Pimeä katu ja vilahtava peikon häntä"
-            bind:this={imageRefs[0]} />
-    </Newspaper>
-
-    <Newspaper pageNumber="3">
-        <NewsSection>
-            <p>
-                Kun etsivän korviin kantautuu mysteeri, on aika metsästää punaista lankaa sataman
-                valoissa. Mutta pian hän huomaa, että tämän palapelin palaset ovat pahasti sekaisin.
-                Pitkän työpäivän lopuksi saattaa kunnon kahville olla tarvetta.
-            </p>
-        </NewsSection>
-
-        <AnimatedImage
-            src={eetos}
-            className="newspaper-image"
-            alt="Etsivä toimistossaan"
-            bind:this={imageRefs[1]} />
-    </Newspaper>
-
-    <Newspaper pageNumber="4">
-        <NewsSection>
-            <p>
-                Mihin suuntaan kapteenin kaukoputki osoittaa? Mitä salaisuuksia kätkeytyy
-                tonttulakkien alle? Saadaanko faksi korjattua? Tule mukaan katsomaan vuoden 2025
-                HybridiSpeksiä!
-            </p>
-        </NewsSection>
-
-        <AnimatedImage
-            src={tyrsky}
-            className="newspaper-image"
-            alt="Kapteeni tähystää kaukoputkella"
-            bind:this={imageRefs[2]} />
-    </Newspaper>
+	<p>
+	Juhlavuosiproduktion lipunmyynti aukeaa 24.9.2025. Omstartteja huutamaan toivotaan sankoin joukoin sekä entisiä ja nykyisiä <br>  hybridispeksaajia sekä HybridiSpeksin faneja vuosien varrelta.
+	</p>
+</NewsSection>
+</Newspaper>
 </main>
+
 <Sponsors sponsors={data.sponsors} />
 
 <style lang="css">
     .page {
         width: 100%;
-        background-color: var(--bark);
+        background-color: #636159;
         padding-top: 6rem;
         margin: 0 auto;
         display: flex;
@@ -133,7 +86,7 @@
         font-size: 1.1rem;
         margin-bottom: 0.2rem;
         @media screen and (min-width: 768px) {
-            font-size: 1.2rem;
+            font-size: 1.35rem;
         }
     }
 
@@ -143,7 +96,7 @@
     }
 
     .logo {
-        width: 25rem;
-        margin: 0 auto 1rem auto;
+        width: 35rem;
+        margin: 60 auto 2rem auto;
     }
 </style>
