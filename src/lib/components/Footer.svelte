@@ -52,6 +52,8 @@
 						<a href="/hybridispeksi-ryn-merkkiohjesaanto"
 							>Yhdistyksen merkkiohjesääntö</a>
 					</li>
+					<li><a href="/ymparistosuunnitelma">Yhdistyksen ympäristösuunnitelma</a></li>
+					<li><a href="/yhdenvertaisuussuunnitelma">Yhdistyksen yhdenvertaisuussuunnitelma</a></li>
 					<li><a href="/rekisteriseloste">Rekisteriseloste</a></li>
 				</ul>
 			</div>
