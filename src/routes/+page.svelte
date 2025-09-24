@@ -48,9 +48,13 @@ Intohimoinen Tuomi suostuttelee mukaansa entisen yhtiökumppaninsa Junon. Yhdess
 	</p>
 
 	<p>
-	Juhlavuosiproduktion lipunmyynti aukeaa 24.9.2025. Omstartteja huutamaan toivotaan sankoin joukoin sekä entisiä ja nykyisiä <br>  hybridispeksaajia sekä HybridiSpeksin faneja vuosien varrelta.
+	Juhlavuosiproduktion lipunmyynti aukeaa 24.9.2025. Omstartteja huutamaan toivotaan sankoin joukoin sekä entisiä ja nykyisiä hybridispeksaajia sekä HybridiSpeksin faneja vuosien varrelta.
 	</p>
 </NewsSection>
+	<div class="link">
+	<p>
+	<a href="https://kide.app/community/d96376eb-02ff-4b1b-be75-a959f0fe0c42">Linkki lippukauppaan</a></p>
+	</div>
 </Newspaper>
 </main>
 
@@ -89,6 +93,11 @@ Intohimoinen Tuomi suostuttelee mukaansa entisen yhtiökumppaninsa Junon. Yhdess
             font-size: 1.35rem;
         }
     }
+    .link p {
+	font-size: 1.5rem;
+	text-align: center;
+	margin-bottom: 0.5rem;
+	}
 
     :global(.newspaper-image) {
         width: 35rem;
