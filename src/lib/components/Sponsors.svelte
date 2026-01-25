@@ -9,7 +9,7 @@
 
     function getMainSponsorHeading() {
         return sponsors.filter((sponsor) => sponsor.mainsponsor).length > 1
-            ? 'pääyhteistyökummanit'
+            ? 'pääyhteistyökumppanit'
             : 'Pääyhteistyökumppani';
     }
 
@@ -125,7 +125,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 19rem;
+        width: 15rem;
 
         @media (max-width: 767px) {
             margin: 0 4rem;
@@ -134,7 +134,7 @@
 
     .main-sponsor-logo-container {
         @extend .sponsor-logo-container;
-        width: 23rem;
+        width: 30rem;
     }
 
     .sponsor-logo {
@@ -154,7 +154,7 @@
 
     .main-sponsor-logo {
         @extend .sponsor-logo;
-        max-width: 400px;
+        max-width: 500px;
         width: 100%;
 
         &:hover {

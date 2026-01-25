@@ -1,5 +1,5 @@
 <script lang="ts">
-    import NewspaperTitle from './NewspaperTitle.svelte';
+    import NewspaperTitle from './NewspaperTitle_juvu.svelte';
 
     export let hasTitleOf: string = '';
     export let pageNumber: string = '';
@@ -24,7 +24,7 @@
     .newspaper {
         display: flex;
         flex-direction: column;
-        width: 90%;
+        width: 83%;
         min-height: 75vh;
         padding: 1rem 1.4rem;
         margin-bottom: 1.5rem;
@@ -35,12 +35,12 @@
         background-color: #e0ddd9;
         background-image: radial-gradient(circle at center, #e8e5e1 0%, #e0ddd9 45%, #d6d2cc 100%);
         @media (min-width: 1000px) {
-            max-width: 1000px;
+            max-width: 1100px;
         }
     }
 
     .newspaper :global(*) {
-        font-family: 'IM Fell English', serif;
+        font-family: Arial, sans-serif;
         color: rgba(0, 0, 0, 0.75);
         padding: 0;
         margin: 0;
