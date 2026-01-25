@@ -1,4 +1,4 @@
-<script lang="ts">
+ <script lang="ts">
     import Newspaper from '$lib/components/newspaper/Newspaper.svelte';
     import NewsSection from '$lib/components/newspaper/NewsSection.svelte';
     import AnimatedImage from '$lib/components/AnimatedImage.svelte';

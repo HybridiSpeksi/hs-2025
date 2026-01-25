@@ -21,7 +21,9 @@
 <svelte:window bind:scrollY={y} />
 
 <main class="page">
-
+<h1>
+HybridiSpeksi 2026 Esittää:
+</h1>
 
         <img src={Logo_2026} class="logo" alt="Ylin oppinut -produktion logo" />
 </main>
@@ -29,6 +31,13 @@
 <Sponsors sponsors={data.sponsors} />
 
 <style lang="css">
+    h1 {
+	color: var(--white);
+        margin: 0;
+        text-align: center;
+	font-family: Arial, sans-serif;
+        width: 100%;}
+
     .page {
         width: 100%;
         background-color: #000123;
@@ -38,7 +47,7 @@
         flex-direction: column;
         align-items: center;
     }
-
+	
     .link p {
 	font-size: 1.5rem;
 	text-align: center;
