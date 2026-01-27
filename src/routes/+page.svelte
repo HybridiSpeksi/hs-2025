@@ -55,8 +55,10 @@ HybridiSpeksi 2026 Esittää:
 	}
 
     .logo {
-        width: 50rem;
-        margin: 60 auto 2rem auto;
+    width: 50rem;
+	max-width: 100%;
+	height: auto;
+    margin: 60 auto 2rem auto;
 	margin-bottom: 15rem; 
     }
 </style>
