@@ -9,8 +9,8 @@
 
     function getMainSponsorHeading() {
         return sponsors.filter((sponsor) => sponsor.mainsponsor).length > 1
-            ? 'pääyhteistyökumppanit'
-            : 'Pääyhteistyökumppani';
+            ? 'Yhteistyössä'
+            : 'Yhteistyössä';
     }
 
     function hasMainSponsors() {
@@ -47,7 +47,6 @@
         </div>
     {/if}
     {#if hasRegularSponsors()}
-        <h2 class="global-center">Yhteistyössä</h2>
 
         <div class="regular-sponsors-container sponsors-container">
             {#each sponsors as sponsor}
@@ -134,7 +133,7 @@
 
     .main-sponsor-logo-container {
         @extend .sponsor-logo-container;
-        width: 30rem;
+        width: 23rem;
     }
 
     .sponsor-logo {
