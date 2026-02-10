@@ -109,6 +109,8 @@ h2 {
         width: 50rem;
         margin: 60 auto 2rem auto;
 	margin-bottom: 5rem; 
+max-width: 100%;
+  height: auto;
     }
 
 
