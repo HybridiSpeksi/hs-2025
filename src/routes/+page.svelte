@@ -163,6 +163,8 @@ h2 {
         margin: 60 auto 2rem auto;
         margin-bottom: 0rem;
 	margin-top: 0rem;
+	max-width: 100%;
+  	height: auto;
     }
 
     .kuvitus{
