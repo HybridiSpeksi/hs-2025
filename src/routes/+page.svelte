@@ -47,7 +47,7 @@ HybridiSpeksi 2026 esittää:
             </ul>
             <p>sekä Tampereella Messukylän työväentalolla</p>
             <ul>
-                <li>la 18.4. </li>
+                <li>la 18.4. klo 17</li>
             </ul>
 <p> Lipunmyynti aukeaa 26.2 klo 14.00 </p>
 </div> 
