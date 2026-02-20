@@ -152,6 +152,8 @@ h2 {
     .synopsis {
         margin: 50 auto;
         text-align: center;
+	max-width: 100%;
+  	height: auto;
     }
 
     .synopsis p {
