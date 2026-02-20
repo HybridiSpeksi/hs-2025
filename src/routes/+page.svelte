@@ -110,7 +110,7 @@ h2 {
 
 
     .page {
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("$lib/images/2026/Nettisivutausta.png");
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("$lib/images/2026/Nettisivutausta.png");
 	background-repeat: repeat;
         width: 100%;
         padding-top: 6rem;
