@@ -76,6 +76,7 @@ Katso tästä teaser!
 	</div>
 
 
+
 </main>
 
 
@@ -93,9 +94,19 @@ Katso tästä teaser!
 h2 {
 	color: FFFFFFF;
         margin: 0;
+		font-family: SimSun;
+
         text-align: center;
 	font-family: SimSun;
         width: 100%;}
+    
+h2 {
+	color: var(--white);
+        margin: 0;
+        text-align: center;
+	font-family: SimSun;
+        width: 100%;}
+
 
 
     .page {
