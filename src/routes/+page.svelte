@@ -78,13 +78,6 @@ Katso tästä teaser!
 				code="r3I5hkt0-MI" />
 	</div>
 
-<h2> Kuka kilpailijoista olet? </h2>
-<p> Testaa alla olevan kyselyn avulla, keihin näytelmän hahmoista samastut eniten! </p>
-
-
-<Quizz id={quizz_id} />
-
-
 </div>
 </main>
 
