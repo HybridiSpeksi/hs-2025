@@ -5,9 +5,10 @@
     import kuvituskuva2 from '$lib/images/2026/kuvituskuva2.png'
     import kuvituskuva3 from '$lib/images/2026/kuvituskuva3.png'
     import Video from '$lib/components/Video.svelte';
+    import Quizz from '$lib/components/Quizz_2026.svelte';
     export let data;
     let y: number;
-
+    let quizz_id = 5;
 
     type ImageRef = {
         updateVisibility?: (scrollY: number) => void;
@@ -26,6 +27,7 @@
 <svelte:window bind:scrollY={y} />
 
 <main class="page">
+<div class= "näyttö">
 <h1>
 HybridiSpeksi 2026 esittää:
 </h1>
@@ -47,9 +49,9 @@ HybridiSpeksi 2026 esittää:
             </ul>
             <p>sekä Tampereella Messukylän työväentalolla</p>
             <ul>
-                <li>la 18.4. </li>
+                <li>la 18.4. klo 17 </li>
             </ul>
-<p> Lipunmyynti aukeaa 26.2 klo 14.00 </p>
+<p> Lipunmyynti aukeaa 26.2. klo 14 </p>
 </div> 
 
 <div class ="synopsis">
@@ -66,6 +68,7 @@ Mutta... entä jos kulissien takana kaikki ei olekaan sitä, miltä näyttää? 
 <img src={kuvituskuva3} class="kuvitus" />
 </div>
 
+
 <h2>
 Katso tästä teaser!
 </h2>
@@ -75,7 +78,14 @@ Katso tästä teaser!
 				code="r3I5hkt0-MI" />
 	</div>
 
+<h2> Kuka kilpailijoista olet? </h2>
+<p> Testaa alla olevan kyselyn avulla, keihin näytelmän hahmoista samastut eniten! </p>
 
+
+<Quizz id={quizz_id} />
+
+
+</div>
 </main>
 
 
@@ -83,23 +93,42 @@ Katso tästä teaser!
 
 <style lang="css">
     h1 {
-	color: FFFFFFF;
+	color: #FFFFFF;
         margin: 0;
-		font-family: SimSun;
-	font-size: 4rem;
+	font-family: SimSun;
+	font-size: 3.4rem;
+	margin-top: 3rem;
         text-align: center;
-        width: 100%;}
+	max-width: 100%;
+	height: auto;}
     
 h2 {
-	color: FFFFFFF;
+	color: #FFFFFF;
         margin: 0;
         text-align: center;
 	font-family: SimSun;
-        width: 100%;}
-
+	max-width: 100%;
+	height: auto;}
+    
+.näyttö {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+	height: auto;
+        padding: 1rem 1.4rem;
+	margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        color: #FFFFFF;
+	border-style: solid;
+	border-color: #FFFFFF;
+        position: relative;
+        overflow: hidden;
+        background-color: #000000;
+            max-width: 1000px;
+}
 
     .page {
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("$lib/images/2026/Nettisivutausta.png");
+	background: url("$lib/images/2026/Nettisivutausta.png");
 	background-repeat: repeat;
         width: 100%;
         padding-top: 6rem;
@@ -108,6 +137,12 @@ h2 {
         flex-direction: column;
         align-items: center;
     }
+p {	color: #FFFFFF;
+	font-size: 1.3rem;
+        text-align: center;
+	font-family: SimSun;
+        width: 100%;
+}
     .schedule {
         margin: 50 auto;
         text-align: center;
@@ -141,10 +176,14 @@ h2 {
     .synopsis {
         margin: 50 auto;
         text-align: center;
+	max-width: 100%;
+  	height: auto;
+
     }
 
     .synopsis p {
 	width: 50rem;
+	max-width: 100%;
 	font-size: 2rem;
 	font-family: SimSun;
         margin: 60 auto 2rem auto;
