@@ -51,7 +51,10 @@ HybridiSpeksi 2026 esittää:
             <ul>
                 <li>la 18.4. klo 17</li>
             </ul>
-<p> Lipunmyynti aukeaa 26.2. klo 14 </p>
+	<div class="link">
+	<p>
+	<a href="https://kide.app/community/d96376eb-02ff-4b1b-be75-a959f0fe0c42/events">Linkki lippukauppaan</a></p>
+	</div>
 </div> 
 
 <div class ="synopsis">
@@ -194,10 +197,19 @@ p {	color: #FFFFFF;
 	max-width: 100%;
   	height: auto;
 }	
-    .link p {
-	font-size: 1.5rem;
-	text-align: center;
-	margin-bottom: 0.5rem;
+.link a {
+	color: #FFFFFF}
+
+
+
+.link p {
+	width: 50rem;
+	max-width: 100%;
+	font-size: 2rem;
+	font-family: SimSun;
+        margin: 60 auto 2rem auto;
+        margin-bottom: 0rem;
+	margin-top: 3rem;
 	}
 
     .logo {
