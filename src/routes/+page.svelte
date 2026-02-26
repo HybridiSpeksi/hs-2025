@@ -144,6 +144,8 @@ p {	color: #FFFFFF;
     .schedule {
         margin: 50 auto;
         text-align: center;
+		max-width: 100%;
+		height: auto;
     }
 
     .schedule p {
@@ -210,6 +212,8 @@ p {	color: #FFFFFF;
         margin: 60 auto 2rem auto;
         margin-bottom: 0rem;
 	margin-top: 3rem;
+	max-width: 100%;
+	height: auto;
 	}
 
     .logo {
