@@ -72,22 +72,54 @@ Mutta... entä jos kulissien takana kaikki ei olekaan sitä, miltä näyttää? 
 </div>
 
 
+
+
+<div class="video-container">
+<div>
 <h2>
 Katso tästä teaser!
 </h2>
-	<div class="video-container">
+
 			<Video
 				videoURL="https://www.youtube.com/embed/r3I5hkt0-MI"
-				code="r3I5hkt0-MI" />
+				code="https://i.ytimg.com/vi/r3I5hkt0-MI/maxresdefault.jpg" />
 	</div>
 
+
+
+<div>
+
+<h2>
+Ja tästä trailer!
+</h2>
+
+			<Video 
+				videoURL="https://www.youtube.com/embed/BwOgh20Odao"
+				code="/src/lib/images/2026/traileri.jpg" />
+	</div>
 </div>
+
+
+
+
+<h2> Kuka kilpailijoista olet? </h2>
+<p> Testaa alla olevan kyselyn avulla, keihin näytelmän hahmoista samastut eniten! </p>
+
+
+
+<Quizz id={quizz_id} />
+
+
+</div>
+
+
 </main>
 
 
 <Sponsors sponsors={data.sponsors} />
 
 <style lang="css">
+
     h1 {
 	color: #FFFFFF;
         margin: 0;
@@ -111,10 +143,10 @@ h2 {
 .näyttö {
         display: flex;
         flex-direction: column;
-        width: 90%;
-	height: auto;
+  	justify-content: center;
+        align-items: center;
         padding: 1rem 1.4rem;
-	margin-top: 2rem;
+	margin-top: 0rem;
         margin-bottom: 1.5rem;
         color: #FFFFFF;
 	border-style: solid;
@@ -122,16 +154,27 @@ h2 {
         position: relative;
         overflow: hidden;
         background-color: #000000;
-            max-width: 1000px;
-}
+        max-width: 1000px;
+        width: 85%;
+	height: auto;}
+    
+h2 {
+	color: var(--white);
+        margin: 0;
+        text-align: center;
+	font-family: SimSun;
+        width: 100%;}
 
-    .page {
+
+
+   .page {
 	background: url("$lib/images/2026/Nettisivutausta.png");
 	background-repeat: repeat;
         width: 100%;
         padding-top: 6rem;
         margin: 0 auto;
-        display: flex;
+        display: flex; 
+  	justify-content: center;
         flex-direction: column;
         align-items: center;
     }
@@ -144,8 +187,8 @@ p {	color: #FFFFFF;
     .schedule {
         margin: 50 auto;
         text-align: center;
-		max-width: 100%;
-		height: auto;
+	max-width: 100%;
+	height: auto;
     }
 
     .schedule p {
@@ -165,14 +208,24 @@ p {	color: #FFFFFF;
         margin-bottom: 0.2rem;
 	font-family: SimSun;
     }
-	.video-container {
-		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 10px 0;
-		margin-bottom: 5rem;
+.video-container {
+	width: 100%;
+	padding: 10px 0;
+	margin-bottom: 5rem;
 	}
+
+.video-container div {
+	width:50%;
+	float:left;
+        display: flex; 
+  	justify-content: center;
+        flex-direction: column;
+        align-items: center;
+}
+
+
+
+
     .synopsis {
         margin: 50 auto;
         text-align: center;
@@ -199,6 +252,7 @@ p {	color: #FFFFFF;
 	max-width: 100%;
   	height: auto;
 }	
+    
 .link a {
 	color: #FFFFFF}
 
