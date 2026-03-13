@@ -22,7 +22,7 @@
 </script>
 
 <button on:click={openLightbox}
-    ><img src="https://i.ytimg.com/vi/{code}/maxresdefault.jpg" alt="youtube thumbnail" />
+    ><img src="{code}" alt="youtube thumbnail" />
     <div class="play-mark"></div></button>
 
 {#if lightboxOpen}
@@ -58,7 +58,7 @@
         padding: 0;
         background: none;
         width: 50%;
-        @media (max-width: 1000px) {
+        @media (max-width: 1500px) {
             width: 100%;
             padding: 0 25px;
         }
