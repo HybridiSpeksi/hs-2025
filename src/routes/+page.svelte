@@ -95,7 +95,7 @@ Ja tästä trailer!
 
 			<Video 
 				videoURL="https://www.youtube.com/embed/BwOgh20Odao"
-				code="https://github.com/HybridiSpeksi/hs-2025/blob/main/src/lib/images/2026/traileri.png" />
+				code="https://github.com/HybridiSpeksi/hs-2025/blob/main/src/lib/images/2026/traileri.png?raw=true" />
 	</div>
 </div>
 
