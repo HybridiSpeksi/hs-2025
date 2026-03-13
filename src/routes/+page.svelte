@@ -49,7 +49,7 @@ HybridiSpeksi 2026 esittää:
             </ul>
             <p>sekä Tampereella Messukylän työväentalolla</p>
             <ul>
-                <li>la 18.4. klo 17 </li>
+                <li>la 18.4. klo 17</li>
             </ul>
 	<div class="link">
 	<p>
@@ -106,13 +106,19 @@ Ja tästä trailer!
 <p> Testaa alla olevan kyselyn avulla, keihin näytelmän hahmoista samastut eniten! </p>
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b30b6a5b8413106c53b5a2bd56ab43297d4585cd
 <Quizz id={quizz_id} />
 
 
 </div>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> b30b6a5b8413106c53b5a2bd56ab43297d4585cd
 </main>
 
 
@@ -154,6 +160,7 @@ h2 {
         position: relative;
         overflow: hidden;
         background-color: #000000;
+<<<<<<< HEAD
         max-width: 1000px;
         width: 85%;
 	height: auto;}
@@ -166,6 +173,10 @@ h2 {
         width: 100%;}
 
 
+=======
+            max-width: 1000px;
+}
+>>>>>>> b30b6a5b8413106c53b5a2bd56ab43297d4585cd
 
    .page {
 	background: url("$lib/images/2026/Nettisivutausta.png");
@@ -242,6 +253,8 @@ p {	color: #FFFFFF;
         margin: 60 auto 2rem auto;
         margin-bottom: 0rem;
 	margin-top: 0rem;
+	max-width: 100%;
+  	height: auto;
     }
 
     .kuvitus{
