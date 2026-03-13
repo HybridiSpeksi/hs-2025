@@ -95,7 +95,7 @@ Ja tästä trailer!
 
 			<Video 
 				videoURL="https://www.youtube.com/embed/BwOgh20Odao"
-				code="$lib/images/2026/traileri.png" />
+				code="$images/2026/traileri.png" />
 	</div>
 </div>
 
