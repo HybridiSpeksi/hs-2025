@@ -13,7 +13,7 @@
     });
 
     // Negative margin for certain pages
-    const negativeMarginSlugs = ['2024', ''];
+    const negativeMarginSlugs = ['2024','2025','2026','juvu'];
     $: currentPage = $page.url.pathname.split('/')[1];
     $: negativeMargin = negativeMarginSlugs.includes(currentPage);
 </script>

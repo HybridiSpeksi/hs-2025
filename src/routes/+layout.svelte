@@ -13,6 +13,8 @@
                 return 'Kevätpäivänseisaus | HybridiSpeksi';
 	    case '/2025':
 		return 'Kippis ja kavallus | HybridiSpeksi';
+	    case '/2026':
+		return 'Ylin oppinut | HybridiSpeksi';
 	    case '/juvu':
 		return 'Vaihtoehdot vähissä | Hybridispeksi';	
             case '/hybridispeksi-ry-yhdistyksen-saannot':

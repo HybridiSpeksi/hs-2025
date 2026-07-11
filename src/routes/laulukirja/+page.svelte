@@ -18,6 +18,7 @@
 		2023: 'Kreivin aikaan',
 		2024: 'Kevätpäivänseisaus',
 		2025: 'Kippis ja kavallus',
+		2026: 'Ylin oppinut',
 	};
 
 	// State

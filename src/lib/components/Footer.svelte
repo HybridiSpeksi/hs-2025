@@ -3,6 +3,10 @@
 	import ContactsList from '$lib/components/ContactsList.svelte';
 	import { page } from '$app/stores';
 	import logo from '$lib/images/logo_white.avif';
+	import ig from '$lib/images/Instagram_logo_2022.svg';
+	import tiktok from '$lib/images/tiktok.jpg';
+	import yt from '$lib/images/YouTube_full-color_icon_(2017).svg';
+	import fb from '$lib/images/Facebook_f_logo_(2021).svg';
 	let contacts: ContactItem = $page.data.address;
 	let navigations: NavigationObject[] = $page.data.navigations;
 
@@ -30,6 +34,15 @@
 					{/each}
 				</ul>
 			</div>
+			<div class = "some">
+				<h2> Somet </h2>
+				<li><a href="https://www.instagram.com/hybridispeksi/"><img src={ig} alt="HybridiSpeksin Instagram" /></a>
+				<a href="https://www.tiktok.com/@hybridispeksi"><img src={tiktok} alt="HybridiSpeksin Tiktok" /></a>
+				<a href="https://www.youtube.com/@hybridispeksi112"><img src={yt} alt="HybridiSpeksin YouTube" /></a>
+				<a href="https://www.facebook.com/HybridiSpeksi"><img src={fb} alt="HybridiSpeksin Facebook" /></a></li>
+
+
+			</div> 
 			<div class="contacts">
 				<h2>Yhteystiedot</h2>
 				<ContactsList {contacts} />
@@ -89,7 +102,7 @@
 		flex-wrap: wrap;
 		gap: 2rem;
 		div {
-			flex: 1 1 calc(33.33% - 25px);
+			flex: 1 1 calc(25% - 25px);
 			min-width: 300px;
 		}
 	}
@@ -99,6 +112,17 @@
 		flex-direction: column;
 		gap: 1rem;
 	}
+	.some {
+		display: flex;
+		flex-direction: column;
+  	justify-content: center;
+		gap: 1rem;
+		img {
+			max-width: 50px;
+		}
+		}
+
+
 
 	.footer-bottom {
 		width: 100%;
