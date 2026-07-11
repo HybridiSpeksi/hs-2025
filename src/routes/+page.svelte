@@ -16,55 +16,6 @@
 </div>
 
 
-<style lang="scss">
-    h2 {
-
-
-
-
-<div class="video-container">
-<div>
-<h2>
-Katso tästä teaser!
-</h2>
-
-			<Video
-				videoURL="https://www.youtube.com/embed/r3I5hkt0-MI"
-				code="https://i.ytimg.com/vi/r3I5hkt0-MI/maxresdefault.jpg" />
-	</div>
-
-
-
-<div>
-
-<h2>
-Ja tästä trailer!
-</h2>
-
-			<Video 
-				videoURL="https://www.youtube.com/embed/BwOgh20Odao"
-				code="https://i.ytimg.com/vi/BwOgh20Odao/hqdefault.jpg" />
-	</div>
-</div>
-
-
-
-
-<h2> Kuka kilpailijoista olet? </h2>
-<p> Testaa alla olevan kyselyn avulla, keihin näytelmän hahmoista samastut eniten! </p>
-
-
-
-<Quizz id={quizz_id} />
-
-
-</div>
-
-
-</main>
-
-
-<Sponsors sponsors={data.sponsors} />
 
 <style lang="css">
 
