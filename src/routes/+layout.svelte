@@ -8,7 +8,7 @@
         const path = pathname.slice(1);
         switch (pathname) {
             case '/':
-                return 'Ylin oppinut | HybridiSpeksi';
+                return 'HybridiSpeksi';
             case '/2024':
                 return 'Kevätpäivänseisaus | HybridiSpeksi';
 	    case '/2025':
