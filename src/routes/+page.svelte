@@ -43,7 +43,7 @@ Ja tästä trailer!
 
 			<Video 
 				videoURL="https://www.youtube.com/embed/BwOgh20Odao"
-				code="/src/lib/images/2026/traileri.jpg" />
+				code="https://i.ytimg.com/vi/BwOgh20Odao/hqdefault.jpg" />
 	</div>
 </div>
 
