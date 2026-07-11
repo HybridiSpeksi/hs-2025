@@ -15,8 +15,62 @@
     <Sponsors sponsors={data.sponsors} />
 </div>
 
+<<<<<<< HEAD
 <style lang="scss">
     h2 {
+=======
+
+
+
+<div class="video-container">
+<div>
+<h2>
+Katso tästä teaser!
+</h2>
+
+			<Video
+				videoURL="https://www.youtube.com/embed/r3I5hkt0-MI"
+				code="https://i.ytimg.com/vi/r3I5hkt0-MI/maxresdefault.jpg" />
+	</div>
+
+
+
+<div>
+
+<h2>
+Ja tästä trailer!
+</h2>
+
+			<Video 
+				videoURL="https://www.youtube.com/embed/BwOgh20Odao"
+				code="/src/lib/images/2026/traileri.jpg" />
+	</div>
+</div>
+
+
+
+
+<h2> Kuka kilpailijoista olet? </h2>
+<p> Testaa alla olevan kyselyn avulla, keihin näytelmän hahmoista samastut eniten! </p>
+
+
+
+<Quizz id={quizz_id} />
+
+
+</div>
+
+
+</main>
+
+
+<Sponsors sponsors={data.sponsors} />
+
+<style lang="css">
+
+    h1 {
+	color: #FFFFFF;
+>>>>>>> df1f791006e510c5a48884279f839771ad524ac9
         margin: 0;
         color: var(--black);
         text-align: center;
@@ -33,7 +87,43 @@
     section {
         display: flex;
         flex-direction: column;
+<<<<<<< HEAD
         justify-content: center;
+=======
+  	justify-content: center;
+        align-items: center;
+        padding: 1rem 1.4rem;
+	margin-top: 0rem;
+        margin-bottom: 1.5rem;
+        color: #FFFFFF;
+	border-style: solid;
+	border-color: #FFFFFF;
+        position: relative;
+        overflow: hidden;
+        background-color: #000000;
+        max-width: 1000px;
+        width: 85%;
+	height: auto;}
+    
+h2 {
+	color: var(--white);
+        margin: 0;
+        text-align: center;
+	font-family: SimSun;
+        width: 100%;}
+
+
+
+   .page {
+	background: url("$lib/images/2026/Nettisivutausta.png");
+	background-repeat: repeat;
+        width: 100%;
+        padding-top: 6rem;
+        margin: 0 auto;
+        display: flex; 
+  	justify-content: center;
+        flex-direction: column;
+>>>>>>> df1f791006e510c5a48884279f839771ad524ac9
         align-items: center;
         gap: 1.5rem;
         padding: 2.5rem 0 7rem 0;
