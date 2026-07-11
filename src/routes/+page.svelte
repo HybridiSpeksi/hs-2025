@@ -15,10 +15,10 @@
     <Sponsors sponsors={data.sponsors} />
 </div>
 
-<<<<<<< HEAD
+
 <style lang="scss">
     h2 {
-=======
+
 
 
 
@@ -70,7 +70,6 @@ Ja tästä trailer!
 
     h1 {
 	color: #FFFFFF;
->>>>>>> df1f791006e510c5a48884279f839771ad524ac9
         margin: 0;
         color: var(--black);
         text-align: center;
@@ -87,9 +86,6 @@ Ja tästä trailer!
     section {
         display: flex;
         flex-direction: column;
-<<<<<<< HEAD
-        justify-content: center;
-=======
   	justify-content: center;
         align-items: center;
         padding: 1rem 1.4rem;
@@ -123,7 +119,6 @@ h2 {
         display: flex; 
   	justify-content: center;
         flex-direction: column;
->>>>>>> df1f791006e510c5a48884279f839771ad524ac9
         align-items: center;
         gap: 1.5rem;
         padding: 2.5rem 0 7rem 0;
