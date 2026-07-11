@@ -18,7 +18,7 @@
 
 <style lang="css">
 
-    h1 {
+h2  {
 	color: #FFFFFF;
         margin: 0;
         color: var(--black);
@@ -27,8 +27,8 @@
 
         @media screen and (max-width: 768px) {
             font-size: 1.4rem;
-        }
-    }
+        }}
+
     .page {
         background-color: var(--light-blue);
   	justify-content: center;
@@ -37,12 +37,13 @@
         gap: 1.5rem;
         padding: 2.5rem 0 7rem 0;
         & img {
-	    padding-left: 17%;
-            width: 83%;
+	    padding-left: 25%;
+            width: 75%;
             max-width: 55rem;
         }
         @media screen and (max-width: 768px) {
             padding: 1.5rem 0 3rem 0rem;
         }
     }
+</style>
 </style>
