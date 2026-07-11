@@ -1,4 +1,5 @@
 <script>
+    import traileri from "$lib/images/2026/traileri.png"
     import { onMount } from 'svelte';
     export let videoURL = '';
     export let code = '';
