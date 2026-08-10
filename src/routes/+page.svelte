@@ -10,7 +10,7 @@
             src="/images/hiiri.avif"
             alt="Mouse in a hardhat building the new webiste"
             draggable="false" />
-<h2> Huom. yhdistyksen jäsen! Olethan huomannut ilmoittautumisvaatimuksen? Lisätietoja saat kaikilta yhdistyksen viestintäkanavilta ja hallitukselta! Yhteystiedot löytyvät yhdeystiedot-sivulta</h2>
+<h2> Huom. yhdistyksen jäsen! Olethan huomannut ilmoittautumisvaatimuksen? Lisätietoja saat kaikilta yhdistyksen viestintäkanavilta ja hallitukselta! Yhteystiedot löytyvät yhteystiedot-sivulta</h2>
     </section>
     <Sponsors sponsors={data.sponsors} />
 </div>
