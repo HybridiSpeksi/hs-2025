@@ -1,0 +1,49 @@
+{
+	"name": "hs-2025",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prev": "vite build && vite preview",
+		"test": "npm run test:e2e && npm run test:unit",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"tsc": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write .",
+		"test:e2e": "playwright test",
+		"test:unit": "vitest"
+	},
+	"devDependencies": {
+		"@iconify-json/mdi": "^1.2.1",
+		"@playwright/test": "^1.28.1",
+		"@sveltejs/adapter-auto": "^3.1.1",
+		"@sveltejs/kit": "^2.7.3",
+		"@sveltejs/vite-plugin-svelte": "^3.1.2",
+		"@types/node": "^20.11.21",
+		"@typescript-eslint/eslint-plugin": "^6.19.1",
+		"@typescript-eslint/parser": "^6.19.1",
+		"eslint": "^8.56.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-svelte": "^2.35.1",
+		"prettier": "^3.2.4",
+		"prettier-plugin-svelte": "^3.1.2",
+		"rollup": "^4.22.4",
+		"sass": "^1.80.4",
+		"svelte": "^4.2.19",
+		"svelte-check": "^3.6.3",
+		"tslib": "^2.6.2",
+		"typescript": "^5.3.3 <5.4.0",
+		"unplugin-icons": "^0.19.3",
+		"vite": "^5.4.12",
+		"vitest": "^1.6.1"
+	},
+	"type": "module",
+	"dependencies": {
+		"bigger-picture": "^1.1.17",
+		"chart.js": "^4.4.2",
+		"svelte-chartjs": "^3.1.5"
+	}
+}
