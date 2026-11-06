@@ -1,5 +1,17 @@
 <script lang="ts">
     export let data;
+    import produktiologo_2026 from '$lib/images/vanhat_produktiot/2026/produktiologo_2026.svg'
+    import produktiologo_JVS2025 from '$lib/images/vanhat_produktiot/JVS2025/produktiologo_JVS2025.svg'
+    import produktiologo_2025 from '$lib/images/vanhat_produktiot/2025/produktiologo_2025.png'
+    import produktiologo_2024 from '$lib/images/vanhat_produktiot/2024/produktiologo_2024.png'
+    import produktiologo_2023 from '$lib/images/vanhat_produktiot/2023/produktiologo_2023_moniväri.png'
+    import produktiologo_2022 from '$lib/images/vanhat_produktiot/2022/produktiologo_2022_liekit.png'
+    import produktiologo_2020 from '$lib/images/vanhat_produktiot/2020/produktiologo_2020.png'
+    import produktiologo_2019 from '$lib/images/vanhat_produktiot/2019/produktiologo_2019.jpg'
+    import produktiologo_2018 from '$lib/images/vanhat_produktiot/2018/produktiologo_2018.png'
+    import produktiologo_2017 from '$lib/images/vanhat_produktiot/2017/produktiologo_2017_harmaa.png'
+    import produktiologo_2016 from '$lib/images/vanhat_produktiot/2016/produktiologo_2016.png'
+    import produktiologo_2015 from '$lib/images/vanhat_produktiot/2015/produktiologo_2015.png'
 
 </script>
 
@@ -13,6 +25,7 @@
 <a href="/produktiot/2026/">
     <div class="content">
       <h2>Ylin oppinut</h2>
+	<img src={produktiologo_2026}/>
       <p>Lorem ipsum..</p>
     </div>
 </a>
@@ -24,6 +37,7 @@
 <a href="/produktiot/juvu/">
     <div class="content">
       <h2>Vaihto&shy;ehdot vähissä</h2>
+	<img src={produktiologo_JVS2025}/>
       <p>Lorem ipsum..</p>
     </div>
 </a>
@@ -34,6 +48,7 @@
 <a href="/produktiot/2025/">
     <div class="content">
       <h2>Kippis ja kavallus</h2>
+	<img src={produktiologo_2025}/>
       <p>Lorem ipsum..</p>
     </div>
 </a>
@@ -44,6 +59,7 @@
 <a href="/produktiot/2024/">
     <div class="content">
       <h2>Kevät&shy;päivän&shy;seisaus</h2>
+	<img src={produktiologo_2024}/>
       <p>Lorem ipsum..</p>
     </div>
 </a>
@@ -53,6 +69,7 @@
 <a href="/produktiot/2023/">
     <div class="content">
       <h2>Kreivin aikaan</h2>
+	<img src={produktiologo_2023}/>
       <p>Lorem ipsum..</p>
     </div>
 </a>
@@ -63,6 +80,7 @@
 <a href="/produktiot/2022/">
     <div class="content">
       <h2>Inferno: Kunnes Kadotus meidät korjaa</h2>
+	<img src={produktiologo_2022}/>
       <p>Lorem ipsum..</p>
     </div>
 </a>
@@ -72,6 +90,7 @@
 <a href="/produktiot/2020/">
     <div class="content">
       <h2>2101: Avaruus&shy;risteily</h2>
+	<img src={produktiologo_2020}/>
       <p>Lorem ipsum..</p>
     </div>
 </a>
@@ -83,6 +102,7 @@
 <a href="/produktiot/2019/">
     <div class="content">
       <h2>Viimeinen lohikäärme&shy;isku</h2>
+	<img src={produktiologo_2019}/>
       <p>Lorem ipsum..</p>
     </div>
 </a>
@@ -92,6 +112,7 @@
 <a href="/produktiot/2018/">
     <div class="content">
       <h2>Älä ammu ohi</h2>
+	<img src={produktiologo_2018}/>
       <p>Lorem ipsum..</p>
     </div>
 </a>
@@ -102,6 +123,7 @@
 <a href="/produktiot/2017/">
     <div class="content">
       <h2>Kruunun kohtalo</h2>
+	<img src={produktiologo_2017}/>
       <p>Lorem ipsum..</p>
     </div>
 </a>
@@ -112,6 +134,7 @@
 <a href="/produktiot/2016/">
     <div class="content">
       <h2>Bratva&shy;Kontra</h2>
+	<img src={produktiologo_2016}/>
       <p>Lorem ipsum..</p>
     </div>
 </a>
@@ -120,7 +143,8 @@
   <div class="container right">
 <a href="/produktiot/2015/">
     <div class="content">
-      <h2>H.A.L.I</h2>
+      <h2>H.A.L.I.</h2>
+	<img src={produktiologo_2015}/>
       <p>Lorem ipsum..</p>
     </div>
 </a>
@@ -199,6 +223,14 @@ a:active {
             padding: 1.5rem 0 3rem 0rem;
         }
     }
+
+img {
+	display: inline-block;
+	max-width: 90%;
+  	height: auto;
+	object-fit: contain;
+}
+
 * {
   box-sizing: border-box;
 }
